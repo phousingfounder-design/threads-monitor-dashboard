@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Threads 專案監控 Dashboard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #232522;
+        --muted: #68716a;
+        --line: #d9dfd7;
+        --paper: #ffffff;
+        --wash: #f5f7f2;
+        --leaf: #4f6b57;
+        --sun: #d9954e;
+        --sky: #5c7c9c;
+        --rose: #b96773;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+        color: var(--ink);
+        background: var(--wash);
+      }
+
+      main {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 28px 20px 56px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        align-items: end;
+        padding: 22px 0 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1, h2, h3, p { margin: 0; }
+      h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.12; letter-spacing: 0; }
+      h2 { font-size: 20px; line-height: 1.25; }
+      h3 { font-size: 15px; line-height: 1.3; }
+      p, li { line-height: 1.65; }
+      a { color: var(--leaf); }
+      .muted { color: var(--muted); }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        white-space: nowrap;
+      }
+
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: var(--leaf);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .span-4 { grid-column: span 4; }
+      .span-6 { grid-column: span 6; }
+      .span-12 { grid-column: span 12; }
+
+      .metric {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        align-items: baseline;
+      }
+
+      .metric strong {
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .keywords, .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0;
+        margin: 14px 0 0;
+        list-style: none;
+      }
+
+      .keywords li, .tags li {
+        padding: 6px 10px;
+        border: 1px solid #cfd8cc;
+        border-radius: 999px;
+        background: #eef2ea;
+        line-height: 1.3;
+      }
+
+      .tags li:nth-child(2n) {
+        border-color: #e4c99d;
+        background: #fbf0de;
+      }
+
+      .tags li:nth-child(3n) {
+        border-color: #c9d8e5;
+        background: #edf4f8;
+      }
+
+      .note {
+        margin-top: 18px;
+        padding: 14px;
+        border: 1px solid #e4c99d;
+        border-radius: 8px;
+        background: #fff8ec;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        margin-top: 14px;
+      }
+
+      table {
+        width: 100%;
+        min-width: 1180px;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      td { font-size: 14px; }
+
+      .priority {
+        display: inline-block;
+        min-width: 54px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 13px;
+        text-align: center;
+      }
+
+      .high { background: #f8e3e6; color: #8b3442; }
+      .medium { background: #fbf0de; color: #8a5a1f; }
+      .low { background: #edf4f8; color: #315d7a; }
+
+      .voice {
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .voice article {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfa;
+      }
+
+      .reply-list {
+        margin: 10px 0 0;
+        padding-left: 20px;
+      }
+
+      footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 820px) {
+        header { grid-template-columns: 1fr; align-items: start; }
+        .span-4, .span-6, .span-12 { grid-column: span 12; }
+        main { padding: 20px 14px 42px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Threads 專案監控 Dashboard</h1>
+          <p class="muted">長期監控：找出提及關鍵字的 Threads 貼文或留言，並判斷是否適合品牌或小帳加入。</p>
+        </div>
+        <div class="status">
+          <span class="dot" aria-hidden="true"></span>
+          <span>長期來源已校正</span>
+        </div>
+      </header>
+
+      <section class="grid" aria-label="監控總覽">
+        <article class="panel span-4">
+          <div class="metric">
+            <h2>關鍵字</h2>
+            <strong>50</strong>
+          </div>
+          <ul class="keywords">
+            <li>樂木集</li>
+            <li>LOMOJI</li>
+            <li>足浴</li>
+            <li>泡腳</li>
+            <li>足浴袋</li>
+            <li>泡腳桶</li>
+            <li>漢方湯浴包</li>
+            <li>燕麥浴鹽包</li>
+            <li>居家SPA</li>
+            <li>漢方茶</li>
+            <li>養生茶</li>
+            <li>無咖啡因茶</li>
+            <li>刮痧</li>
+            <li>按摩油</li>
+            <li>肩頸按摩器</li>
+          </ul>
+        </article>
+
+        <article class="panel span-4">
+          <div class="metric">
+            <h2>本輪命中</h2>
+            <strong>17</strong>
+          </div>
+          <p class="muted">來自公開 Threads 搜尋可見範圍。</p>
+        </article>
+
+        <article class="panel span-4">
+          <div class="metric">
+            <h2>主要目標</h2>
+            <strong>文 + 留言</strong>
+          </div>
+          <p class="muted">提及關鍵字即可納入判斷，不限定合作貼文。</p>
+        </article>
+      </section>
+
+      <section class="grid" aria-label="產品理解">
+        <article class="panel span-12">
+          <h2>樂木集產品理解</h2>
+          <ul class="tags">
+            <li>SPA溫感足浴袋</li>
+            <li>標準 / 加寬尺寸</li>
+            <li>9層加厚保溫結構</li>
+            <li>43cm可泡小腿</li>
+            <li>好提好倒水</li>
+            <li>挺立不漏水</li>
+            <li>摺疊收納</li>
+            <li>漢方循環湯浴包</li>
+            <li>天天舒壓</li>
+            <li>日日輕盈</li>
+            <li>月月溫順</li>
+            <li>燕麥浴鹽包</li>
+            <li>睡前 / 下班放鬆</li>
+            <li>久坐久站</li>
+            <li>九款漢方養生茶</li>
+            <li>無咖啡因</li>
+            <li>無糖</li>
+            <li>沒有中藥味</li>
+            <li>極輕濕</li>
+            <li>助眠</li>
+            <li>纖美</li>
+            <li>月事</li>
+            <li>刮痧板</li>
+            <li>撥筋棒</li>
+            <li>杜松生薑按摩油</li>
+            <li>經絡按摩刷</li>
+            <li>按摩槌</li>
+            <li>拍痧棒</li>
+            <li>肩頸按摩器</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="grid" aria-label="搜尋方法">
+        <article class="panel span-6">
+          <h2>搜尋流程</h2>
+          <ol>
+            <li>讀取 `keywords.json`。</li>
+            <li>針對每個關鍵字搜尋 Threads 公開頁面與公開網頁索引。</li>
+            <li>優先記錄貼文，也記錄可見留言或回覆脈絡。</li>
+            <li>用 URL 去重。</li>
+            <li>依情緒、互動、品牌關聯、回覆風險排序。</li>
+          </ol>
+        </article>
+
+        <article class="panel span-6">
+          <h2>覆蓋限制</h2>
+          <ul class="reply-list">
+            <li>Threads 公開搜尋不一定露出所有結果。</li>
+            <li>留言通常比貼文更容易被登入牆或平台限制擋住。</li>
+            <li>若要完整留言巡查，會需要登入 session、社群聆聽工具，或可授權的資料匯出。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="grid" aria-label="本週結果">
+        <article class="panel span-12">
+          <h2>目前公開可見發現</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>優先級</th>
+                  <th>關鍵字</th>
+                  <th>貼文 / 留言脈絡</th>
+                  <th>情緒</th>
+                  <th>建議動作</th>
+                  <th>品牌小編留言</th>
+                  <th>小帳留言</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>足浴 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@a_ch_u/post/DYCYV2Jki08">2026-05-07 樂木集泡腳桶提及</a><br />提到樂木集泡腳桶、漢方湯浴包、新款出水口、下班泡腳與倒掛晾乾設計。</td>
+                  <td>正向、細節具體、生活化</td>
+                  <td>品牌小編可回覆，抓出水口和下班儀式感。</td>
+                  <td>出水口跟能倒掛晾乾這種小細節，真的會在浴室差點變水災的瞬間突然變偉大。</td>
+                  <td>倒掛晾乾跟好收納好重要，浴室東西真的最怕越放越多。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>足浴 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@oyhuahua/post/DX_-wdAjzvE">2026-05-06 長工時泡腳體驗</a><br />使用者說坐整天腿腫，使用樂木集後被泡腳「ㄉㄧㄠˊ住」，也提到燕麥湯浴包與睡眠。</td>
+                  <td>正向、共感強、互動佳</td>
+                  <td>品牌小編可回覆；小帳可接工作疲勞和睡眠。</td>
+                  <td>「本來覺得泡腳是老人行為」這句太真，很多快樂都是長大後才突然懂。下班後把腳交給熱水真的很可以。</td>
+                  <td>坐一整天腿腫真的懂，泡完比較好睡這點好心動，感覺很適合配追劇。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>泡腳 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@debbyhair__/post/DYwPt0mE-Mz">2026-05-25 品牌提及</a><br />使用者分享泡腳自由、邊打遊戲邊泡腳，並提醒水不要裝太滿。</td>
+                  <td>正向、生活感、有笑點</td>
+                  <td>品牌小編可回覆；小帳可輕鬆附和。</td>
+                  <td>這個水裝太滿的畫面感太強了，泡腳自由第一課：先不要太相信自己的手感。</td>
+                  <td>邊打遊戲邊泡腳聽起來也太爽，我也想試試但感覺水位真的要小心。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>泡腳</td>
+                  <td><a href="https://www.threads.com/@bbkf5_milk/post/DYkFc9-k8qs">2026-05-20 美甲流程提問</a><br />使用者詢問足部美甲前是否會先泡腳。</td>
+                  <td>好奇、實用</td>
+                  <td>小帳可自然分享經驗；品牌只在能提供資訊時加入。</td>
+                  <td>這題很生活欸，感覺可以先問店家，避免現場突然進入驚喜流程。</td>
+                  <td>我遇過有先泡的，也遇過沒有，可能真的看店家。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>泡腳</td>
+                  <td><a href="https://www.threads.com/@akai_0320/post/DHN30L4p80h">2025-03-15 足部困擾討論</a><br />高互動貼文，主題是流汗、氣味與泡腳求助。</td>
+                  <td>困擾、求助、互動高</td>
+                  <td>可監測留言語境；避免醫療宣稱。</td>
+                  <td>這種困擾真的會讓人很崩潰，先抱抱。可以先從鞋襪透氣和固定清潔節奏慢慢排查。</td>
+                  <td>我之前也是先從換襪子材質開始，真的有差一點。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>泡腳</td>
+                  <td><a href="https://www.threads.com/@ianthe1010/post/DZUTBX4GEqL">2026-06-08 腳臭 / 鞋臭困擾</a><br />使用者準備去瑜珈前抱怨腳或鞋子有味道，想洗腳。</td>
+                  <td>尷尬、生活困擾、可共感</td>
+                  <td>小帳可輕鬆共鳴；品牌避免氣味或療效宣稱。</td>
+                  <td>這個去瑜珈前突然懷疑人生的瞬間也太懂，先不要慌，鞋子也列入嫌疑名單。</td>
+                  <td>有時候真的是鞋子本人在作怪，先洗腳再換一雙襪子會安心很多。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>足浴</td>
+                  <td><a href="https://www.threads.com/@dayuango/post/DPQvN6yEq7l">2025-10-01 足浴按摩服務討論</a><br />旅行/服務型貼文，討論足浴按摩、餐飲、過夜與高 CP 值。</td>
+                  <td>驚喜、分享、服務體驗</td>
+                  <td>觀察足浴服務語言，不建議品牌直接留言。</td>
+                  <td>不建議品牌回覆，適合觀察足浴服務語言。</td>
+                  <td>這個比較像旅遊服務分享，小帳也不必硬進場。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority low">Low</span></td>
+                  <td>足浴</td>
+                  <td><a href="https://www.threads.com/@lu_herbal/post/DQWP8zlAXwx">2025-10-28 足浴包貼文</a><br />其他品牌談天冷、偷懶泡腳與足浴包。</td>
+                  <td>溫暖、養生、自我照顧</td>
+                  <td>觀察類目語言，不建議直接進場。</td>
+                  <td>不建議品牌回覆，避免進入其他品牌貼文。</td>
+                  <td>不建議小帳回覆，除非本來就有自然使用經驗。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority low">Low</span></td>
+                  <td>泡腳 / 足部困擾</td>
+                  <td><a href="https://www.threads.com/@chenyian_cst_tainan/post/DM0TdZnyC6u">2025-08-01 足底筋膜炎討論</a><br />足部健康帳號談足底筋膜炎與厚底鞋，屬於足部痛點脈絡。</td>
+                  <td>教育型、專業、痛點</td>
+                  <td>只做洞察，不建議品牌回覆。</td>
+                  <td>不建議品牌回覆，避免碰醫療與療效脈絡。</td>
+                  <td>可以純觀察，不建議留言。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>肩頸僵硬 / 肩頸按摩器</td>
+                  <td><a href="https://www.threads.com/@pay.u820/post/DThjHP7kcOZ">2026-01-15 肩頸按摩器求推薦</a><br />使用者因工作關係肩頸痛到唉唉叫，想找真心使用過的肩頸按摩器推薦。</td>
+                  <td>痛點明確、求推薦、可回覆</td>
+                  <td>品牌可用「日常自我照顧」角度加入，避免療效承諾。</td>
+                  <td>工作把肩頸逼到唉唉叫真的太有畫面。這種東西最重要還是要自己會想每天拿出來用。</td>
+                  <td>我也想知道真心用過的推薦，肩頸硬起來真的會影響整天心情。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>刮痧 / 肩頸按摩</td>
+                  <td><a href="https://www.threads.com/@cindy220125/post/DY7B3o-mmhH">2026-05-29 洗頭店肩頸按摩需求</a><br />使用者找高雄洗頭店，希望有肩頸按摩或刮痧。</td>
+                  <td>需求強、生活化、互動高</td>
+                  <td>品牌可觀察肩頸舒壓需求；若回覆要像朋友聊店家需求。</td>
+                  <td>洗頭加肩頸按摩真的很懂，頭洗完、肩頸也鬆一點，才有一種真的下班了的感覺。</td>
+                  <td>這種店如果按得好會想固定報到，肩頸按摩是靈魂。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>按摩油</td>
+                  <td><a href="https://www.threads.com/@astro.tale_aroma/post/DV8o5eOE6hN">2026-03-16 按摩油吸收討論</a><br />芳療師分享按摩時皮膚很會吸油的觀察，連結到疲累和乾燥狀態。</td>
+                  <td>專業分享、按摩保養情境</td>
+                  <td>適合觀察按摩油語言；品牌可輕柔回應，不做功效宣稱。</td>
+                  <td>身體很累的時候，皮膚好像也會一起喊「我需要被照顧一下」。按摩油這題很生活。</td>
+                  <td>皮膚吃油很快這件事我有感，尤其冬天或很累的時候。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>撥筋 / 刮痧</td>
+                  <td><a href="https://www.threads.com/@relax_ingear/post/DMul5j9zol3">2025-07-30 臉部撥筋手法</a><br />美業帳號提醒臉部撥筋不要粗魯亂刮，手法要溫柔。</td>
+                  <td>教育型、工具使用脈絡</td>
+                  <td>可觀察使用者對「亂刮」的擔心，品牌回覆要強調溫柔日常。</td>
+                  <td>「不要亂刮臉」這句很重要，工具再順手也要溫柔一點，臉真的不是牆壁。</td>
+                  <td>看到粗魯直接刮我也會怕，臉部按摩感覺手法比力氣重要。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>撥筋 / 刮痧</td>
+                  <td><a href="https://www.threads.com/@bunshen_meridians/post/DB3xnn6MULK">2024-11-02 在家頭部撥經</a><br />分享用牛角棒、刮痧板或拳頭做頭部放鬆。</td>
+                  <td>居家自我照顧、教學型</td>
+                  <td>適合觀察居家按摩工具情境；回覆避免穴位療效。</td>
+                  <td>在家頭部放鬆這種小儀式很可以，重點是慢慢來，不是把自己當麵團揉。</td>
+                  <td>頭皮放鬆真的舒服，我都洗完頭比較有動力按一下。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>肩頸僵硬</td>
+                  <td><a href="https://www.threads.com/@foooodie_s/post/DYzcY-ck9NE">2026-05-26 背包旅行肩膀酸痛</a><br />使用者問背後背包出國旅遊，背久肩膀酸痛怎麼改善。</td>
+                  <td>旅行痛點、可共感</td>
+                  <td>可用小帳自然加入；品牌不硬導產品。</td>
+                  <td>旅行背包背久，肩膀真的會先開始懷疑人生。回家後能好好放鬆一下很必要。</td>
+                  <td>背包旅行肩膀酸爆懂，肩帶調好跟每天放鬆都很重要。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority low">Low</span></td>
+                  <td>無咖啡因茶 / 代謝茶</td>
+                  <td><a href="https://www.threads.com/@alex1100106/post/DY3sF5Hj0DE">2026-05-28 寶雅代謝茶討論</a><br />使用者看到代謝茶，問是否有用。</td>
+                  <td>茶飲保健、功效疑問</td>
+                  <td>只做趨勢觀察；不建議品牌回答有效。</td>
+                  <td>不建議品牌直接回「有效」。可以觀察大家對無咖啡因、日常茶飲的需求。</td>
+                  <td>這種茶我會先看成分跟咖啡因，晚上喝的話無咖啡因比較安心。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority low">Low</span></td>
+                  <td>漢方茶 / 藥膳茶</td>
+                  <td><a href="https://www.threads.com/@kiyo_healthylife/post/DZZPVUrEwEs">2026-06-10 藥膳茶觀念貼文</a><br />日文健康帳號討論藥膳茶不是普通茶。</td>
+                  <td>類目教育、非台灣品牌語境</td>
+                  <td>類目觀察；若回覆要避免功效宣稱。</td>
+                  <td>如果聊茶，比起講效果，感覺更適合聊「每天願不願意喝」這件事。</td>
+                  <td>這種茶如果味道不要太重，會比較容易每天喝。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel" style="margin-top: 18px;">
+        <h2>可擴充關鍵字</h2>
+        <ul class="tags">
+          <li>泡腳桶</li>
+          <li>足浴桶</li>
+          <li>泡腳包</li>
+          <li>漢方泡腳</li>
+          <li>下班放鬆</li>
+        </ul>
+      </section>
+
+      <footer>
+        Last updated: 2026-06-11 11:35 Asia/Taipei。
+      </footer>
+    </main>
+  </body>
+</html>
