@@ -3,6 +3,8 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
+export GIT_SSH_COMMAND="${GIT_SSH_COMMAND:-ssh -i /Users/ichieh_weng/.ssh/threads_monitor_dashboard -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new}"
+
 cp dashboard.html index.html
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
