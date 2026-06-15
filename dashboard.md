@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-06-15 17:15 Asia/Taipei
+Last updated: 2026-06-15 17:25 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -29,7 +29,7 @@ Public Threads search had partial visibility:
 - New expanded searches for `漢方茶`, `養生茶`, `無咖啡因茶`, `刮痧`, `撥筋`, `按摩油`, and `肩頸僵硬` found several usable category conversations. Tea keywords were noisy and mostly surfaced general drink posts; gua sha/massage/shoulder-neck keywords were more relevant.
 - Display volume expanded from 17 to 35 public findings. Search extraction found 95 unique public URLs, but the dashboard keeps filtered items that are brand/category relevant enough for review.
 - `dashboard.html` now displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
-- Top-level engagement totals are now displayed: 37,277 likes, 5,258 comments, and 2,714 reposts across currently parseable public findings.
+- Per-post engagement metrics are displayed in each dashboard row: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 
 ## Product Understanding Added
 
