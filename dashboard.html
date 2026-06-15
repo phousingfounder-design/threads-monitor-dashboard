@@ -140,7 +140,7 @@
 
       table {
         width: 100%;
-        min-width: 1180px;
+        min-width: 1300px;
         border-collapse: collapse;
       }
 
@@ -158,6 +158,14 @@
       }
 
       td { font-size: 14px; }
+
+      .metrics {
+        min-width: 112px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
 
       .priority {
         display: inline-block;
@@ -327,6 +335,7 @@
                   <th>優先級</th>
                   <th>關鍵字</th>
                   <th>貼文 / 留言脈絡</th>
+                  <th>互動數</th>
                   <th>情緒</th>
                   <th>建議動作</th>
                   <th>品牌小編留言</th>
@@ -676,8 +685,53 @@
       </section>
 
       <footer>
-        Last updated: 2026-06-11 11:35 Asia/Taipei。
+        Last updated: 2026-06-15 17:05 Asia/Taipei。
       </footer>
     </main>
+    <script>
+      const publicMetrics = {
+        "https://www.threads.com/@a_ch_u/post/DYCYV2Jki08": ["23", "6", "3"],
+        "https://www.threads.com/@oyhuahua/post/DX_-wdAjzvE": ["25", "15", "4"],
+        "https://www.threads.com/@debbyhair__/post/DYwPt0mE-Mz": ["16", "10", "4"],
+        "https://www.threads.com/@akai_0320/post/DHN30L4p80h": ["2,848", "860", "79"],
+        "https://www.threads.com/@dayuango/post/DPQvN6yEq7l": ["9,769", "590", "394"],
+        "https://www.threads.com/@lu_herbal/post/DQWP8zlAXwx": ["33", "5", "2"],
+        "https://www.threads.com/@pay.u820/post/DThjHP7kcOZ": ["13", "17", "6"],
+        "https://www.threads.com/@cindy220125/post/DY7B3o-mmhH": ["2,919", "1,150", "488"],
+        "https://www.threads.com/@astro.tale_aroma/post/DV8o5eOE6hN": ["1,245", "102", "20"],
+        "https://www.threads.com/@relax_ingear/post/DMul5j9zol3": ["2,108", "26", "220"],
+        "https://www.threads.com/@bunshen_meridians/post/DB3xnn6MULK": ["1,373", "27", "167"],
+        "https://www.threads.com/@foooodie_s/post/DYzcY-ck9NE": ["17", "13", "1"],
+        "https://www.threads.com/@alex1100106/post/DY3sF5Hj0DE": ["940", "88", "49"],
+        "https://www.threads.com/@yyingchi/post/DZR3hfckyNH": ["21", "6", "3"],
+        "https://www.threads.com/@mirahiarashi/post/DTcAheako6l": ["6", "28", "2"],
+        "https://www.threads.com/@cupid_penny0903/post/DTxUdZKkymD": ["13", "40", "2"],
+        "https://www.threads.com/@zeldachuang/post/DCgubhRTEz8": ["233", "144", "7"],
+        "https://www.threads.com/@buni.16/post/DLNVbATSxr5": ["1,260", "127", "11"],
+        "https://www.threads.com/@huangstars/post/DZCU1POAe2m": ["175", "33", "1"],
+        "https://www.threads.com/@jas.nail/post/DOJbtFnEyNg": ["1", "1", "待確認"],
+        "https://www.threads.com/@dd._.mini/post/DHTn0RHvQk8": ["31", "53", "待確認"],
+        "https://www.threads.com/@dangawi/post/DWBnLpBkRu-": ["283", "84", "1"],
+        "https://www.threads.com/@moon.str_nails/post/DUqVZ0sEhpB": ["3,609", "44", "243"],
+        "https://www.threads.com/@tera.happiness/post/DUItYKMFGiA": ["4,335", "191", "236"],
+        "https://www.threads.com/@shinuan.herb/post/DTB1fghEzR9": ["927", "101", "17"],
+        "https://www.threads.com/@duadua7337/post/DZCRmjvkxDa": ["1", "12", "待確認"],
+        "https://www.threads.com/@cc_7ching/post/DVSzhdNkRSw": ["3,814", "1,011", "662"],
+        "https://www.threads.com/@cathy.aroma/post/DZXrZJak4kl": ["67", "38", "44"],
+        "https://www.threads.com/@looooouis__/post/DYPpRffk0tg": ["708", "227", "2"],
+        "https://www.threads.com/@xinwei__1006/post/DVm-RD8Epiu": ["464", "209", "46"]
+      };
+
+      document.querySelectorAll("tbody tr").forEach((row) => {
+        const link = row.querySelector('a[href*="/post/"]');
+        const metrics = link ? publicMetrics[link.href.split("?")[0]] : null;
+        const cell = document.createElement("td");
+        cell.className = "metrics";
+        cell.innerHTML = metrics
+          ? `按讚 ${metrics[0]}<br>留言 ${metrics[1]}<br>轉發 ${metrics[2]}`
+          : "按讚 待確認<br>留言 待確認<br>轉發 待確認";
+        row.insertBefore(cell, row.children[3]);
+      });
+    </script>
   </body>
 </html>
