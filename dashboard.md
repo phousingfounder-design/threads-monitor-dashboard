@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-06-15 17:25 Asia/Taipei
+Last updated: 2026-06-15 17:45 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -30,6 +30,7 @@ Public Threads search had partial visibility:
 - Display volume expanded from 17 to 35 public findings. Search extraction found 95 unique public URLs, but the dashboard keeps filtered items that are brand/category relevant enough for review.
 - `dashboard.html` now displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - Per-post engagement metrics are displayed in each dashboard row: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
+- Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
 
 ## Product Understanding Added
 

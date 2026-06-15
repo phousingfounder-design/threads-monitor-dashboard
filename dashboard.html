@@ -204,6 +204,57 @@
         padding-left: 20px;
       }
 
+      .keyword-manager {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .keyword-manager input,
+      .keyword-manager button,
+      .keyword-actions button {
+        min-height: 38px;
+        border-radius: 8px;
+        font: inherit;
+      }
+
+      .keyword-manager input {
+        width: 100%;
+        border: 1px solid var(--line);
+        padding: 8px 10px;
+        background: #fff;
+      }
+
+      .keyword-manager button,
+      .keyword-actions button {
+        border: 1px solid #cfd8cc;
+        padding: 8px 12px;
+        background: #eef2ea;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .keyword-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .keyword-output {
+        width: 100%;
+        min-height: 132px;
+        margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 10px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 12px;
+        line-height: 1.5;
+        resize: vertical;
+      }
+
       footer {
         margin-top: 24px;
         color: var(--muted);
@@ -214,6 +265,7 @@
         header { grid-template-columns: 1fr; align-items: start; }
         .span-4, .span-6, .span-12 { grid-column: span 12; }
         main { padding: 20px 14px 42px; }
+        .keyword-manager { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -680,18 +732,29 @@
       </section>
 
       <section class="panel" style="margin-top: 18px;">
-        <h2>可擴充關鍵字</h2>
-        <ul class="tags">
+        <h2>關鍵字管理</h2>
+        <p class="muted">這裡可以先新增關鍵字並產生新版 `keywords.json`。公開頁面不會直接寫回 GitHub；下載或複製後更新檔案，下一次自動化就會讀到。</p>
+        <form class="keyword-manager" id="keywordForm">
+          <input id="keywordInput" type="text" placeholder="新增關鍵字，例如：熱敷、花草茶、腿部刮痧" aria-label="新增關鍵字" />
+          <button type="submit">新增</button>
+          <button type="button" id="resetKeywords">重設</button>
+        </form>
+        <ul class="tags" id="keywordList">
           <li>泡腳桶</li>
           <li>足浴桶</li>
           <li>泡腳包</li>
           <li>漢方泡腳</li>
           <li>下班放鬆</li>
         </ul>
+        <div class="keyword-actions">
+          <button type="button" id="copyKeywords">複製 keywords.json</button>
+          <button type="button" id="downloadKeywords">下載 keywords.json</button>
+        </div>
+        <textarea class="keyword-output" id="keywordOutput" readonly aria-label="新版 keywords.json"></textarea>
       </section>
 
       <footer>
-        Last updated: 2026-06-15 17:25 Asia/Taipei。
+        Last updated: 2026-06-15 17:45 Asia/Taipei。
       </footer>
     </main>
     <script>
@@ -738,6 +801,83 @@
           : "按讚 待確認<br>留言 待確認<br>轉發 待確認";
         row.insertBefore(cell, row.children[3]);
       });
+
+      const baseKeywords = [
+        "樂木集", "LOMOJI", "lomoji", "足浴", "泡腳", "足浴袋", "泡腳桶", "足浴桶",
+        "漢方湯浴包", "漢方循環湯浴包", "湯浴包", "泡腳包", "燕麥浴鹽包", "溫感足浴袋",
+        "SPA足浴", "居家SPA", "睡前泡腳", "下班泡腳", "久坐腿腫", "久站腿酸", "手腳冰冷",
+        "泡腳助眠", "足浴禮盒", "漢方茶", "養生茶", "無咖啡因茶", "無糖茶", "沒有中藥味",
+        "極輕濕", "助眠茶", "纖美茶", "亮妍茶", "月事茶", "女神茶", "養聲茶", "刮痧",
+        "刮痧板", "美體刮痧板", "撥筋棒", "撥筋美容刮痧棒", "按摩油", "杜松生薑按摩油",
+        "按摩刷", "經絡按摩刷", "按摩槌", "拍痧棒", "肩頸按摩器", "筋膜放鬆", "肩頸僵硬",
+        "低頭族", "久坐肩頸"
+      ];
+      const priorityKeywords = ["樂木集", "足浴袋", "泡腳桶", "漢方湯浴包", "燕麥浴鹽包", "居家SPA", "漢方茶", "刮痧", "按摩油", "肩頸僵硬"];
+      const keywordStorageKey = "lomoji-dashboard-keywords";
+      const keywordList = document.getElementById("keywordList");
+      const keywordOutput = document.getElementById("keywordOutput");
+      const keywordInput = document.getElementById("keywordInput");
+
+      const loadKeywords = () => {
+        try {
+          const saved = JSON.parse(localStorage.getItem(keywordStorageKey) || "[]");
+          return Array.from(new Set([...baseKeywords, ...saved].map((item) => item.trim()).filter(Boolean)));
+        } catch {
+          return [...baseKeywords];
+        }
+      };
+
+      const buildKeywordJson = (keywords) => ({
+        keywords,
+        priority_keywords: priorityKeywords.filter((item) => keywords.includes(item)),
+        noise_control: [
+          "When a broad keyword such as 泡腳, 足浴, 刮痧, 按摩, or 養生茶 returns unrelated content, keep only posts/comments that connect to foot soaking, foot bath products, relaxation, self-care, long sitting/standing, cold hands/feet, sleep routine, foot odor/care, gifting, home spa, herbal tea routines, caffeine-free tea, gua sha, meridian massage, shoulder/neck stiffness, low-head/phone posture, or body relaxation.",
+          "Do not treat medical content as reply-worthy unless the reply is purely empathetic and avoids claims."
+        ],
+        notes: "Add or remove keywords here. The weekly automation should read this file before each run."
+      });
+
+      const renderKeywords = () => {
+        const keywords = loadKeywords();
+        keywordList.innerHTML = "";
+        keywords.forEach((keyword) => {
+          const item = document.createElement("li");
+          item.textContent = keyword;
+          keywordList.appendChild(item);
+        });
+        keywordOutput.value = JSON.stringify(buildKeywordJson(keywords), null, 2);
+      };
+
+      document.getElementById("keywordForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const keyword = keywordInput.value.trim();
+        if (!keyword) return;
+        const saved = JSON.parse(localStorage.getItem(keywordStorageKey) || "[]");
+        localStorage.setItem(keywordStorageKey, JSON.stringify(Array.from(new Set([...saved, keyword]))));
+        keywordInput.value = "";
+        renderKeywords();
+      });
+
+      document.getElementById("resetKeywords").addEventListener("click", () => {
+        localStorage.removeItem(keywordStorageKey);
+        renderKeywords();
+      });
+
+      document.getElementById("copyKeywords").addEventListener("click", async () => {
+        await navigator.clipboard.writeText(keywordOutput.value);
+      });
+
+      document.getElementById("downloadKeywords").addEventListener("click", () => {
+        const blob = new Blob([keywordOutput.value], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "keywords.json";
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+      renderKeywords();
     </script>
   </body>
 </html>
