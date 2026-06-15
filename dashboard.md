@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-06-15 17:45 Asia/Taipei
+Last updated: 2026-06-15 19:21 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -9,6 +9,11 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 - 樂木集
 - 足浴
 - 泡腳
+- 濕氣
+- 中藥
+- 漢方
+- 睡不著
+- 失眠
 
 ## Current Monitoring Method
 
@@ -31,6 +36,7 @@ Public Threads search had partial visibility:
 - `dashboard.html` now displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - Per-post engagement metrics are displayed in each dashboard row: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
+- 2026-06-15 19:21 pass added `濕氣`, `中藥`, `漢方`, `睡不著`, and `失眠` to `keywords.json`. Publicly visible matches were strongest around no-caffeine evening drinks, sleep-before foot soaking, herbal foot bath packets, and Chinese-herbal tea language. `濕氣` was noisier and should be filtered toward non-medical daily wellness contexts such as 極輕濕, 清爽感, and routine tea drinking.
 
 ## Product Understanding Added
 
@@ -87,3 +93,14 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 ## Coverage Notes
 
 Threads public search does not reliably expose all keyword mentions, especially comments and replies. For fuller coverage, the monitor may need a logged-in Threads session, an approved listening tool, or manual export from a social listening platform.
+
+## Added Keyword Pass
+
+| Keyword | Public Match | Suggested Angle |
+| --- | --- | --- |
+| 睡不著 / 失眠 | https://www.threads.com/@yyingchi/post/DZR3hfckyNH | 接加班後睡不好與泡腳日常，語氣像朋友陪對方把自己從工作裡撈回來。 |
+| 睡不著 / 睡前泡腳 | https://www.threads.com/@wwr.98/post/DOpwvmLgawJ | 接睡前泡腳的購買決策，聊好收、好倒水、願意持續用。 |
+| 中藥 / 漢方 | https://www.threads.com/@huangstars/post/DZCU1POAe2m | 用草本味和儀式感解釋泡腳湯包，避開功效承諾。 |
+| 中藥 / 漢方 / 養生茶 | https://www.threads.com/@shinuan.herb/post/DTB1fghEzR9 | 觀察「一杯茶也能是日常照顧」的類目語言，不進入競品推銷。 |
+| 濕氣 / 養生茶 | https://www.threads.com/@tera.happiness/post/DUItYKMFGiA | 用清爽感、日常茶飲習慣觀察，不判斷體質或講改善濕氣。 |
+| 失眠 / 無咖啡因茶 | https://www.threads.com/@duadua7337/post/DZCRmjvkxDa | 接晚上想喝熱飲但怕咖啡因的需求，適合帶到無咖啡因、無糖、好入口。 |

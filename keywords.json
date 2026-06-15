@@ -28,6 +28,11 @@
     "無咖啡因茶",
     "無糖茶",
     "沒有中藥味",
+    "濕氣",
+    "中藥",
+    "漢方",
+    "睡不著",
+    "失眠",
     "極輕濕",
     "助眠茶",
     "纖美茶",
@@ -60,12 +65,15 @@
     "燕麥浴鹽包",
     "居家SPA",
     "漢方茶",
+    "濕氣",
+    "睡不著",
+    "失眠",
     "刮痧",
     "按摩油",
     "肩頸僵硬"
   ],
   "noise_control": [
-    "When a broad keyword such as 泡腳, 足浴, 刮痧, 按摩, or 養生茶 returns unrelated content, keep only posts/comments that connect to foot soaking, foot bath products, relaxation, self-care, long sitting/standing, cold hands/feet, sleep routine, foot odor/care, gifting, home spa, herbal tea routines, caffeine-free tea, gua sha, meridian massage, shoulder/neck stiffness, low-head/phone posture, or body relaxation.",
+    "When a broad keyword such as 泡腳, 足浴, 刮痧, 按摩, 養生茶, 濕氣, 中藥, 漢方, 睡不著, or 失眠 returns unrelated content, keep only posts/comments that connect to foot soaking, foot bath products, relaxation, self-care, long sitting/standing, cold hands/feet, sleep routine, foot odor/care, gifting, home spa, herbal tea routines, caffeine-free tea, gua sha, meridian massage, shoulder/neck stiffness, low-head/phone posture, body relaxation, or non-medical daily wellness conversations.",
     "Do not treat medical content as reply-worthy unless the reply is purely empathetic and avoids claims."
   ],
   "notes": "Add or remove keywords here. The weekly automation should read this file before each run."
