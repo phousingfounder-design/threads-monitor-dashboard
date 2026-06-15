@@ -36,7 +36,7 @@ Public Threads search had partial visibility:
 - `dashboard.html` now displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - Per-post engagement metrics are displayed in each dashboard row: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
-- 2026-06-15 19:21 pass added `濕氣`, `中藥`, `漢方`, `睡不著`, and `失眠` to `keywords.json`. Publicly visible matches were strongest around no-caffeine evening drinks, sleep-before foot soaking, herbal foot bath packets, and Chinese-herbal tea language. `濕氣` was noisier and should be filtered toward non-medical daily wellness contexts such as 極輕濕, 清爽感, and routine tea drinking.
+- 2026-06-15 19:21 pass added `濕氣`, `中藥`, `漢方`, `睡不著`, and `失眠` to `keywords.json`. Logged-in Threads search surfaced more results than public search. Stronger safe matches include no-caffeine evening drinks, sleep-before foot soaking, herbal foot bath packets, Chinese-herbal tea language, "中藥味太重" pain points, and "濕氣" lifestyle discussions. Medical, medication, and diagnosis-adjacent results should remain observation-only.
 
 ## Product Understanding Added
 
@@ -89,6 +89,15 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | Medium | 無咖啡因茶 / 台灣品牌 | https://www.threads.com/@cc_7ching/post/DVSzhdNkRSw | User asks Taiwan brands to recommend must-buy items. | 台灣品牌推薦串好適合慢慢挖寶，日常會真的用到的東西最值得被看見。 | 這種串超好逛，會想看大家推薦真的回購的台灣品牌。 |
 | Medium | 按摩油 / 芳療法規 | https://www.threads.com/@cathy.aroma/post/DZXrZJak4kl | Aromatherapist discusses PIF rules and massage oil blending. | 這種專業題真的要小心，按摩油不只是香味，標示跟使用情境都會被放大檢視。 | 芳療師會在意這個很合理，感覺之後買油也會更看標示。 |
 | Low | 按摩油 / 油壓偏好 | https://www.threads.com/@looooouis__/post/DYPpRffk0tg | User likes oil massage but worries whether two-hour oil massage is tiring for therapists. | 喜歡油壓又怕造成對方困擾，這個人也太替按摩師著想了。 | 油壓的放鬆感真的跟指壓不一樣，我懂為什麼會指定。 |
+| High | 濕氣 | https://www.threads.com/@yumi_yumi329/post/DW2EPgUEwsI | User asks people to share the most noticeable ways they deal with body dampness. High engagement and likely useful comments. | 這題留言應該會很多流派。比起追求立刻有感，我會更相信那種每天做得到的小習慣。 | 我也會想看大家分享，茶飲、泡腳、少冰這種日常型方法比較容易持續。 |
+| Medium | 濕氣 / 中藥 | https://www.threads.com/@mark.tagram/post/DWJf7YgCXO1 | User says they are already taking Chinese medicine but still feel heavy and tired, joking about Hsinchu humidity. | 新竹那句太懂，感覺有時候人還沒開始努力，天氣已經先出手了。日常照顧只能慢慢找自己做得到的節奏。 | 新竹濕冷真的會讓人覺得全身很重，熱茶跟泡腳至少是心情上有被安撫到。 |
+| Medium | 濕氣 / 咖啡 / 生活習慣 | https://www.threads.com/@otterpinku/post/DBK0IAhyzkZ | User is trying to adjust habits around dampness, has stopped iced drinks, but finds coffee hard to quit. | 咖啡真的不是說戒就戒，日常調整比較像慢慢換路線，不是突然變成另一個人。 | 我也覺得先少冰、晚上換無咖啡因熱飲，比硬戒咖啡實際一點。 |
+| Medium | 中藥 / 漢方飲品 | https://www.threads.com/@_chiaoder/post/DWMPquzGiCk | User is curious whether viral apple water needs Chinese herbs and whether they need to buy ingredients at a Chinese medicine shop. | 這種網路流行飲品最讓人好奇的是味道到底會不會很中藥。願意喝得下去才有機會變日常。 | 我也會怕煮出來太像藥湯，如果是淡淡草本味比較能接受。 |
+| Medium | 漢方茶 / 輕濕茶 | https://www.threads.com/@hsmed.co/post/DRy23KpkTe0 | Chinese medicine shop extension brand introduces herbal tea, 5-minute brewing, office-friendly warm drinks, and light-dampness tea. | 不建議品牌留言，這篇適合看類目語言和大家對漢方茶的反應。 | 漢方茶如果 5 分鐘就能泡開，對上班族真的比較友善。 |
+| High | 漢方 / 中藥味 | https://www.threads.com/@xin.yuan1983/post/DYmMtfBlPJ0 | Chinese medicine shop post describes a customer worried that boiling herbs at home smells too strong for apartment living. | 住公寓煮中藥被鄰居敲門這個畫面太真了。有時候不是不想養生，是生活空間先說不行。 | 中藥味太重真的會怕影響家人，如果有比較好入口又方便的形式會加分。 |
+| High | 睡不著 | https://www.threads.com/@kellyjane941413/post/C_NiuC7y7Cg | User asks for quick ways to fall asleep, saying they cannot sleep at night and feel tired in the daytime. | 睡不著又白天累，真的會變成一個很煩的循環。睡前能固定一個小儀式，有時候至少會讓心比較知道要收工了。 | 我會把手機放遠一點，再泡腳或喝無咖啡因熱飲，至少讓自己不要一直滑。 |
+| Medium | 睡不著 / 失眠日常 | https://www.threads.com/@lifewriting_0/post/DZS_AvpgePp | User asks whether people still awake a few hours before work are also unable to sleep. | 這種「再過幾小時要上班但我還醒著」真的會越想越清醒。先不要跟自己吵架，能躺平也是休息的一部分。 | 懂，越算還能睡幾小時越睡不著，只能先放下手機救自己。 |
+| Low | 睡不著 / 壓力 | https://www.threads.com/@rong0904_/post/DVqmW8Qk_RI | User jokes about stress/cortisol and sleep advice that tells them to get enough sleep. | 不建議品牌回覆，容易進到健康建議與醫療語境。 | 這種搜尋結果真的常常讓人更煩，明明就是睡不著才去查。 |
 
 ## Coverage Notes
 
@@ -104,3 +113,13 @@ Threads public search does not reliably expose all keyword mentions, especially 
 | 中藥 / 漢方 / 養生茶 | https://www.threads.com/@shinuan.herb/post/DTB1fghEzR9 | 觀察「一杯茶也能是日常照顧」的類目語言，不進入競品推銷。 |
 | 濕氣 / 養生茶 | https://www.threads.com/@tera.happiness/post/DUItYKMFGiA | 用清爽感、日常茶飲習慣觀察，不判斷體質或講改善濕氣。 |
 | 失眠 / 無咖啡因茶 | https://www.threads.com/@duadua7337/post/DZCRmjvkxDa | 接晚上想喝熱飲但怕咖啡因的需求，適合帶到無咖啡因、無糖、好入口。 |
+
+## Logged-In Search Pass
+
+Logged-in search confirmed the in-app Threads session can see richer result pages than public search. Useful search terms for next automation runs:
+
+- `濕氣`: high volume, high noise. Keep lifestyle discussion and avoid diagnosis or weight-loss claims.
+- `中藥`: many medical/weight-loss posts. Keep flavor, convenience, tea, and "中藥味" pain points.
+- `漢方`: useful for category language around 漢方茶, 輕濕茶,即飲包, and office-friendly brewing.
+- `睡不著`: high volume. Keep friend-like night routine posts; avoid mental health, medication, or crisis-adjacent posts.
+- `失眠`: public result page was sparse in this pass; use related terms such as `睡不著`, `無咖啡因`, `睡前泡腳`, and `助眠茶`.
