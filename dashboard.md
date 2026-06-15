@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-06-11 11:35 Asia/Taipei
+Last updated: 2026-06-15 16:35 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -27,6 +27,7 @@ Public Threads search had partial visibility:
 - `泡腳`: visible posts, including 樂木集 mentions and several organic problem/experience posts.
 - Expanded related searches such as `泡腳桶`, `足浴桶`, `泡腳包`, `漢方泡腳` had low precision or no useful public results in this pass.
 - New expanded searches for `漢方茶`, `養生茶`, `無咖啡因茶`, `刮痧`, `撥筋`, `按摩油`, and `肩頸僵硬` found several usable category conversations. Tea keywords were noisy and mostly surfaced general drink posts; gua sha/massage/shoulder-neck keywords were more relevant.
+- Display volume expanded from 17 to 35 public findings. Search extraction found 95 unique public URLs, but the dashboard keeps filtered items that are brand/category relevant enough for review.
 
 ## Product Understanding Added
 
@@ -61,6 +62,24 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | Medium | 肩頸僵硬 | https://www.threads.com/@foooodie_s/post/DYzcY-ck9NE | User asks how backpack travelers deal with shoulder pain. | 旅行背包背久，肩膀真的會先開始懷疑人生。回家後能好好放鬆一下很必要。 | 背包旅行肩膀酸爆懂，肩帶調好跟每天放鬆都很重要。 |
 | Low | 無咖啡因茶 / 代謝茶 | https://www.threads.com/@alex1100106/post/DY3sF5Hj0DE | User mentions seeing a metabolism tea at POYA and asks whether it works. | 不建議品牌直接回「有效」。可觀察無咖啡因/代謝茶討論熱度。 | 這種茶我會先看成分跟咖啡因，晚上喝的話無咖啡因比較安心。 |
 | Low | 漢方茶 / 藥膳茶 | https://www.threads.com/@kiyo_healthylife/post/DZZPVUrEwEs | Japanese health account says herbal/medicinal tea is not just tea. | 類目觀察。若回覆，應避免功效宣稱，改聊日常飲用習慣。 | 這種茶如果味道不要太重，會比較容易每天喝。 |
+| High | 泡腳 / 樂木集 | https://www.threads.com/@yyingchi/post/DZR3hfckyNH | User mentions 加班、焦慮、睡不好、水腫, bought a foot bath bucket, and mentions 樂木集湯包 and 燕麥款. | 加班後願意回到泡腳日常，感覺像是把自己從工作裡慢慢撈回來。燕麥款那個期待感我懂。 | 浴缸泡腳真的麻煩，足浴桶看起來比較容易養成習慣。 |
+| High | 泡腳桶 / 樂木集 | https://www.threads.com/@wwr.98/post/DOpwvmLgawJ | User compares 阿嬤的配方 vs 樂木集 for sleep-before foot soaking. | 睡前泡腳最怕的是買了之後懶得拿出來用，所以好收、好倒水這種小事真的會變大事。 | 我會先看收納跟倒水方不方便，因為泡腳最難的是持續用。 |
+| High | 泡腳桶 | https://www.threads.com/@mirahiarashi/post/DTcAheako6l | User wants a foot bath bucket but worries about heavy water carrying. | 提水真的會決定泡腳桶會不會從療癒用品變成健身器材，這題很實際。 | 我也會怕提水麻煩，感覺好倒水比外型更重要。 |
+| High | 泡腳桶 | https://www.threads.com/@cupid_penny0903/post/DTxUdZKkymD | User says their legs are exhausted and asks for a high-CP foot bath bucket. | 「腿快炸了」真的太懂，這時候只想找一個不要讓人更累的泡腳方法。 | CP 值之外我會看能不能收起來，不然家裡很容易多一個大型障礙物。 |
+| High | 泡腳桶 | https://www.threads.com/@janet__hsu/post/DOu9ClXEzco | User needs daily serious foot soaking and wants heat retention without water-changing hassle. | 每天要用的東西，真的不能太麻煩。保溫跟不用一直折騰換水，會直接影響能不能持續。 | 每日泡腳感覺一定要找好收又好倒水的，不然很快就懶了。 |
+| Medium | 泡腳桶 | https://www.threads.com/@zeldachuang/post/DCgubhRTEz8 | User asks whether foot bath buckets/bags are a waste, listing concerns like heavy, hard to carry, mold, overflow. | 這些疑慮都很真，泡腳桶如果不好拿、難乾、會溢水，真的會從療癒變成家事。 | 我也會先看會不會發霉跟好不好收，這種東西買了不用最可怕。 |
+| Medium | 泡腳桶 | https://www.threads.com/@buni.16/post/DLNVbATSxr5 | User opens a recommendation thread for foot bath buckets. | 泡腳桶推薦串感覺最值得看留言，大家真正在意的通常都藏在抱怨裡。 | 這種串我會直接看留言，大家踩過雷的地方最有用。 |
+| Medium | 泡腳 / 漢方湯包 | https://www.threads.com/@huangstars/post/DZCU1POAe2m | User asks why people add herbal packets to foot soaking. | 有時候湯包不是要把泡腳變複雜，是讓熱水多一點草本味跟「好，現在休息」的儀式感。 | 我覺得有味道會比較有放鬆感，但太濃我也會怕。 |
+| Medium | 足浴 / 美甲保養 | https://www.threads.com/@jas.nail/post/DOJbtFnEyNg | Nail account shares foot-care flow including sea-salt foot bath. | 這種流程看起來很完整，足浴放在前面真的會讓後面的保養比較有儀式感。 | 足部保養前先足浴感覺很舒服，整個流程會比較放鬆。 |
+| Medium | 足浴 / 小腿酸 | https://www.threads.com/@dd._.mini/post/DHTn0RHvQk8 | User asks for massage shops focused on sore calves. | 小腿酸但每次都被按腳底，這個落差很懂，真正累的地方常常不是被照顧的地方。 | 小腿酸真的會想找只處理小腿的，腳底反而不是重點。 |
+| Medium | 足浴 / 洗澡放鬆 | https://www.threads.com/@dangawi/post/DWBnLpBkRu- | User says sitting while showering feels relaxing after work. | 上班那麼累了，洗澡那十幾分鐘坐下來，真的像是跟今天和解一下。 | 坐著洗澡真的舒服，會突然懂浴室也可以是放鬆區。 |
+| Low | 泡腳桶 / 民宿體驗 | https://www.threads.com/@moon.str_nails/post/DUqVZ0sEhpB | User shares a hotel/guesthouse balcony foot bath bucket experience. | 邊泡腳邊看風景聊天，這個配置根本是把放鬆寫進房型裡。 | 陽台有泡腳桶也太加分，會讓人想再住一次。 |
+| Medium | 養生茶 | https://www.threads.com/@tera.happiness/post/DUItYKMFGiA | User shares long-term wellness habits including red bean water, black bean tea, and goji tea. | 養生最難的其實不是買多厲害的東西，是找到自己真的願意每天做的小習慣。 | 紅豆水、黑豆茶、枸杞茶這種輪替感覺很適合放辦公室。 |
+| Medium | 養生茶 / 中藥行 | https://www.threads.com/@shinuan.herb/post/DTB1fghEzR9 | Herbal tea brand says daily wellness can be simple with one tea. | 一杯茶如果能讓人願意停一下，其實就已經很不容易了。 | 繁忙日常裡要照顧自己，從一杯熱茶開始比較不困難。 |
+| Medium | 無咖啡因茶 | https://www.threads.com/@duadua7337/post/DZCRmjvkxDa | User asks for good caffeine-free milk tea recommendations. | 想喝好喝的又不想被咖啡因綁架，這個需求真的很晚上。 | 無咖啡因很重要，晚上想喝熱的但又不想失眠。 |
+| Medium | 無咖啡因茶 / 台灣品牌 | https://www.threads.com/@cc_7ching/post/DVSzhdNkRSw | User asks Taiwan brands to recommend must-buy items. | 台灣品牌推薦串好適合慢慢挖寶，日常會真的用到的東西最值得被看見。 | 這種串超好逛，會想看大家推薦真的回購的台灣品牌。 |
+| Medium | 按摩油 / 芳療法規 | https://www.threads.com/@cathy.aroma/post/DZXrZJak4kl | Aromatherapist discusses PIF rules and massage oil blending. | 這種專業題真的要小心，按摩油不只是香味，標示跟使用情境都會被放大檢視。 | 芳療師會在意這個很合理，感覺之後買油也會更看標示。 |
+| Low | 按摩油 / 油壓偏好 | https://www.threads.com/@looooouis__/post/DYPpRffk0tg | User likes oil massage but worries whether two-hour oil massage is tiring for therapists. | 喜歡油壓又怕造成對方困擾，這個人也太替按摩師著想了。 | 油壓的放鬆感真的跟指壓不一樣，我懂為什麼會指定。 |
 
 ## Coverage Notes
 
