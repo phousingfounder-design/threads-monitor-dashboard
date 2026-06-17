@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-06-15 19:21 Asia/Taipei
+Last updated: 2026-06-17 09:46 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -23,9 +23,17 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 - Deduplicate by URL.
 - Mark coverage limitations when Threads hides comments or requires login.
 
-## First Public Search Findings
+## Current Run Summary
 
-Public Threads search had partial visibility:
+2026-06-17 used a public fallback only. The in-app browser could not open `threads.com` in this session, and direct shell resolution to `www.threads.com` was unavailable, so this run relied on previously indexed public URLs plus public web-search checks.
+
+This pass checked all priority keywords and a rotating broad subset including:
+
+- `樂木集`, `LOMOJI`, `足浴`, `泡腳`, `足浴袋`, `泡腳桶`, `漢方湯浴包`, `燕麥浴鹽包`
+- `漢方茶`, `養生茶`, `濕氣`, `中藥`, `漢方`, `睡不著`, `失眠`
+- `刮痧`, `按摩油`, `肩頸僵硬`
+
+Public fallback coverage had partial visibility:
 
 - `樂木集`: no visible public Threads search results.
 - `足浴`: visible category results, including 樂木集 product-use posts, foot bath service/travel posts, and adjacent foot-care conversations.
@@ -33,10 +41,11 @@ Public Threads search had partial visibility:
 - Expanded related searches such as `泡腳桶`, `足浴桶`, `泡腳包`, `漢方泡腳` had low precision or no useful public results in this pass.
 - New expanded searches for `漢方茶`, `養生茶`, `無咖啡因茶`, `刮痧`, `撥筋`, `按摩油`, and `肩頸僵硬` found several usable category conversations. Tea keywords were noisy and mostly surfaced general drink posts; gua sha/massage/shoulder-neck keywords were more relevant.
 - Display volume expanded from 17 to 35 public findings. Search extraction found 95 unique public URLs, but the dashboard keeps filtered items that are brand/category relevant enough for review.
-- `dashboard.html` now displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
-- Per-post engagement metrics are displayed in each dashboard row: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
+- No net-new high-confidence deduplicated public URLs were added in this run, so the dashboard keeps the existing 35 filtered findings instead of padding with noisy matches.
+- `dashboard.html` displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
-- 2026-06-15 19:21 pass added `濕氣`, `中藥`, `漢方`, `睡不著`, and `失眠` to `keywords.json`. Logged-in Threads search surfaced more results than public search. Stronger safe matches include no-caffeine evening drinks, sleep-before foot soaking, herbal foot bath packets, Chinese-herbal tea language, "中藥味太重" pain points, and "濕氣" lifestyle discussions. Medical, medication, and diagnosis-adjacent results should remain observation-only.
+- Priority themes still worth watching are brand mentions, recommendation requests, sleep/night routine posts, no-caffeine tea needs, foot bath purchase intent, gua sha / massage needs, and relevant lifestyle discussions.
+- Sensitive terms such as `濕氣`, `中藥`, `漢方`, `睡不著`, and `失眠` remain observation-first unless the context is clearly daily-life and reply-safe.
 
 ## Product Understanding Added
 
@@ -101,7 +110,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads public search does not reliably expose all keyword mentions, especially comments and replies. For fuller coverage, the monitor may need a logged-in Threads session, an approved listening tool, or manual export from a social listening platform.
+Threads public search does not reliably expose all keyword mentions, especially comments and replies. This run also could not use the logged-in Threads browser session because direct `threads.com` access was blocked in-session, so comment/reply coverage is narrower than the 2026-06-15 logged-in pass. For fuller coverage, the monitor will need a working logged-in Threads session, an approved listening tool, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 
@@ -114,9 +123,9 @@ Threads public search does not reliably expose all keyword mentions, especially 
 | 濕氣 / 養生茶 | https://www.threads.com/@tera.happiness/post/DUItYKMFGiA | 用清爽感、日常茶飲習慣觀察，不判斷體質或講改善濕氣。 |
 | 失眠 / 無咖啡因茶 | https://www.threads.com/@duadua7337/post/DZCRmjvkxDa | 接晚上想喝熱飲但怕咖啡因的需求，適合帶到無咖啡因、無糖、好入口。 |
 
-## Logged-In Search Pass
+## Logged-In Search Notes
 
-Logged-in search confirmed the in-app Threads session can see richer result pages than public search. Useful search terms for next automation runs:
+The 2026-06-15 logged-in pass confirmed the in-app Threads session can see richer result pages than public search. Useful search terms for the next run when login is available:
 
 - `濕氣`: high volume, high noise. Keep lifestyle discussion and avoid diagnosis or weight-loss claims.
 - `中藥`: many medical/weight-loss posts. Keep flavor, convenience, tea, and "中藥味" pain points.

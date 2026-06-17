@@ -278,7 +278,7 @@
         </div>
         <div class="status">
           <span class="dot" aria-hidden="true"></span>
-          <span>長期來源已校正</span>
+          <span>公開 fallback 已更新</span>
         </div>
       </header>
 
@@ -312,7 +312,7 @@
             <h2>本輪命中</h2>
             <strong>35</strong>
           </div>
-          <p class="muted">來自公開 Threads 搜尋可見範圍。</p>
+          <p class="muted">本輪為公開索引 fallback；未使用登入版 Threads 直接搜尋。</p>
         </article>
 
         <article class="panel span-4">
@@ -378,7 +378,8 @@
           <ul class="reply-list">
             <li>Threads 公開搜尋不一定露出所有結果。</li>
             <li>留言通常比貼文更容易被登入牆或平台限制擋住。</li>
-            <li>若要完整留言巡查，會需要登入 session、社群聆聽工具，或可授權的資料匯出。</li>
+            <li>本輪因 session 無法直接打開 Threads，留言與回覆覆蓋率比 2026-06-15 登入版更窄。</li>
+            <li>若要完整留言巡查，會需要可用的登入 session、社群聆聽工具，或可授權的資料匯出。</li>
           </ul>
         </article>
       </section>
@@ -387,11 +388,11 @@
         <article class="panel span-12">
           <h2>本次新增詞海巡摘要</h2>
           <ul>
-            <li>新增監控詞：濕氣、中藥、漢方、睡不著、失眠。</li>
-            <li>登入版 Threads 搜尋已可讀到更多結果；本輪補進 9 筆濕氣、中藥、漢方、睡不著相關貼文。</li>
-            <li>「睡不著 / 失眠」結果很多，但醫療、藥物、心理健康相關內容不建議品牌進場；適合切入的是晚上醒著、想找睡前儀式、無咖啡因熱飲這類日常語境。</li>
-            <li>「中藥 / 漢方」命中泡腳湯包、養生茶、中藥行茶包、中藥味道太重等類目語境；品牌回覆要偏「草本味、儀式感、日常照顧」，不要講治療效果。</li>
-            <li>「濕氣」結果量大但容易混到體質判斷與減重宣稱，建議只保留清爽感、生活習慣、茶飲與泡腳儀式的安全脈絡。</li>
+            <li>本輪檢查全部 priority keywords，並輪巡 `樂木集`、`LOMOJI`、`足浴`、`泡腳`、`足浴袋`、`泡腳桶`、`漢方湯浴包`、`燕麥浴鹽包`、`漢方茶`、`養生茶`、`濕氣`、`中藥`、`漢方`、`睡不著`、`失眠`、`刮痧`、`按摩油`、`肩頸僵硬`。</li>
+            <li>本輪無法直接使用登入版 Threads；改採公開 Threads 索引與公開網頁搜尋 fallback。</li>
+            <li>公開 fallback 沒有補進足夠乾淨的新 URL，因此維持 35 筆已去重、已篩噪的發現，不用低品質命中灌數。</li>
+            <li>「睡不著 / 失眠」仍以晚上醒著、睡前儀式、無咖啡因熱飲這類日常語境為主；醫療、藥物、心理健康相關內容只做 observation-only。</li>
+            <li>「濕氣 / 中藥 / 漢方」仍只保留清爽感、草本味、生活習慣、茶飲與泡腳儀式等安全脈絡，避開診斷、療效與減重宣稱。</li>
           </ul>
         </article>
         <article class="panel span-12">
@@ -845,7 +846,7 @@
       </section>
 
       <footer>
-        Last updated: 2026-06-15 19:21 Asia/Taipei。
+        Last updated: 2026-06-17 09:46 Asia/Taipei。
       </footer>
     </main>
     <script>
