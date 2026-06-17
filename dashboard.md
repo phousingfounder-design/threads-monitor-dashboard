@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-06-17 09:46 Asia/Taipei
+Last updated: 2026-06-17 17:43 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,7 +25,7 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-06-17 used a public fallback only. The in-app browser could not open `threads.com` in this session, and direct shell resolution to `www.threads.com` was unavailable, so this run relied on previously indexed public URLs plus public web-search checks.
+2026-06-17 used a public fallback only. No in-app browser Threads session was available from the exposed tools in this run, and direct shell resolution to `www.threads.com` also failed, so this pass relied on previously indexed public URLs plus public web-search checks.
 
 This pass checked all priority keywords and a rotating broad subset including:
 
@@ -40,8 +40,8 @@ Public fallback coverage had partial visibility:
 - `泡腳`: visible posts, including 樂木集 mentions and several organic problem/experience posts.
 - Expanded related searches such as `泡腳桶`, `足浴桶`, `泡腳包`, `漢方泡腳` had low precision or no useful public results in this pass.
 - New expanded searches for `漢方茶`, `養生茶`, `無咖啡因茶`, `刮痧`, `撥筋`, `按摩油`, and `肩頸僵硬` found several usable category conversations. Tea keywords were noisy and mostly surfaced general drink posts; gua sha/massage/shoulder-neck keywords were more relevant.
-- Display volume expanded from 17 to 35 public findings. Search extraction found 95 unique public URLs, but the dashboard keeps filtered items that are brand/category relevant enough for review.
-- No net-new high-confidence deduplicated public URLs were added in this run, so the dashboard keeps the existing 35 filtered findings instead of padding with noisy matches.
+- Public search remains weak for direct Threads discovery, but the dashboard retains 45 deduplicated, filtered findings that still match the current keyword set and reply-safety rules.
+- No net-new high-confidence deduplicated public URLs were added in this run, so the dashboard keeps the existing 45 filtered findings instead of padding with noisy matches.
 - `dashboard.html` displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
 - Priority themes still worth watching are brand mentions, recommendation requests, sleep/night routine posts, no-caffeine tea needs, foot bath purchase intent, gua sha / massage needs, and relevant lifestyle discussions.
@@ -110,7 +110,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads public search does not reliably expose all keyword mentions, especially comments and replies. This run also could not use the logged-in Threads browser session because direct `threads.com` access was blocked in-session, so comment/reply coverage is narrower than the 2026-06-15 logged-in pass. For fuller coverage, the monitor will need a working logged-in Threads session, an approved listening tool, or manual export from a social listening platform.
+Threads public search does not reliably expose all keyword mentions, especially comments and replies. This run could not use a logged-in Threads browser session from the available tools, and direct shell resolution to `www.threads.com` failed, so comment/reply coverage is narrower than the 2026-06-15 logged-in pass. For fuller coverage, the monitor will need a working logged-in Threads session, an approved listening tool, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 

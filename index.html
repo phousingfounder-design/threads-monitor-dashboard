@@ -310,7 +310,7 @@
         <article class="panel span-4">
           <div class="metric">
             <h2>本輪命中</h2>
-            <strong>35</strong>
+            <strong>45</strong>
           </div>
           <p class="muted">本輪為公開索引 fallback；未使用登入版 Threads 直接搜尋。</p>
         </article>
@@ -378,7 +378,7 @@
           <ul class="reply-list">
             <li>Threads 公開搜尋不一定露出所有結果。</li>
             <li>留言通常比貼文更容易被登入牆或平台限制擋住。</li>
-            <li>本輪因 session 無法直接打開 Threads，留言與回覆覆蓋率比 2026-06-15 登入版更窄。</li>
+            <li>本輪沒有可用的登入版 Threads session，且 shell 端也無法解析 `www.threads.com`，留言與回覆覆蓋率比 2026-06-15 登入版更窄。</li>
             <li>若要完整留言巡查，會需要可用的登入 session、社群聆聽工具，或可授權的資料匯出。</li>
           </ul>
         </article>
@@ -390,7 +390,7 @@
           <ul>
             <li>本輪檢查全部 priority keywords，並輪巡 `樂木集`、`LOMOJI`、`足浴`、`泡腳`、`足浴袋`、`泡腳桶`、`漢方湯浴包`、`燕麥浴鹽包`、`漢方茶`、`養生茶`、`濕氣`、`中藥`、`漢方`、`睡不著`、`失眠`、`刮痧`、`按摩油`、`肩頸僵硬`。</li>
             <li>本輪無法直接使用登入版 Threads；改採公開 Threads 索引與公開網頁搜尋 fallback。</li>
-            <li>公開 fallback 沒有補進足夠乾淨的新 URL，因此維持 35 筆已去重、已篩噪的發現，不用低品質命中灌數。</li>
+            <li>公開搜尋對 Threads 的直接發現能力仍弱，因此保留 45 筆已去重、已篩噪、仍符合本輪關鍵字與回覆安全規則的發現，不用低品質命中灌數。</li>
             <li>「睡不著 / 失眠」仍以晚上醒著、睡前儀式、無咖啡因熱飲這類日常語境為主；醫療、藥物、心理健康相關內容只做 observation-only。</li>
             <li>「濕氣 / 中藥 / 漢方」仍只保留清爽感、草本味、生活習慣、茶飲與泡腳儀式等安全脈絡，避開診斷、療效與減重宣稱。</li>
           </ul>
@@ -846,7 +846,7 @@
       </section>
 
       <footer>
-        Last updated: 2026-06-17 09:46 Asia/Taipei。
+        Last updated: 2026-06-17 17:43 Asia/Taipei。
       </footer>
     </main>
     <script>
