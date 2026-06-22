@@ -378,7 +378,7 @@
           <ul class="reply-list">
             <li>Threads 公開搜尋不一定露出所有結果。</li>
             <li>留言通常比貼文更容易被登入牆或平台限制擋住。</li>
-            <li>本輪無法使用登入版 Threads session，因為 in-app browser 對 `threads.net` 觸發了安全政策封鎖；留言與回覆覆蓋率比 2026-06-15 登入版更窄。</li>
+            <li>2026-06-22 本輪可使用登入版 Threads session；仍只整理可見貼文與可見互動數，留言串深層內容可能受平台顯示限制。</li>
             <li>若要完整留言巡查，會需要可用的登入 session、社群聆聽工具，或可授權的資料匯出。</li>
           </ul>
         </article>
@@ -388,11 +388,10 @@
         <article class="panel span-12">
           <h2>本次新增詞海巡摘要</h2>
           <ul>
-            <li>本輪檢查全部 priority keywords，並輪巡 `樂木集`、`LOMOJI`、`足浴`、`泡腳`、`足浴袋`、`泡腳桶`、`漢方湯浴包`、`燕麥浴鹽包`、`漢方茶`、`養生茶`、`濕氣`、`中藥`、`漢方`、`睡不著`、`失眠`、`刮痧`、`按摩油`、`肩頸僵硬`。</li>
-            <li>本輪無法直接使用登入版 Threads；`threads.net` 在 in-app browser 內被政策封鎖，因此改採公開 Threads 索引與公開網頁搜尋 fallback。</li>
-            <li>公開搜尋對 Threads 的直接發現能力仍弱，本輪也沒有找到可明確驗證的 net-new 高信度 URL，因此保留 45 筆已去重、已篩噪、仍符合本輪關鍵字與回覆安全規則的發現，不用低品質命中灌數。</li>
-            <li>「睡不著 / 失眠」仍以晚上醒著、睡前儀式、無咖啡因熱飲這類日常語境為主；醫療、藥物、心理健康相關內容只做 observation-only。</li>
-            <li>「濕氣 / 中藥 / 漢方」仍只保留清爽感、草本味、生活習慣、茶飲與泡腳儀式等安全脈絡，避開診斷、療效與減重宣稱。</li>
+            <li>2026-06-22 手動登入版巡查檢查 `樂木集`、`泡腳`、`泡腳桶`、`足浴`、`漢方茶`、`濕氣`、`中藥`、`漢方`、`睡不著`、`失眠`、`刮痧`、`按摩油`、`肩頸僵硬`。</li>
+            <li>本輪新增 10 筆高信度結果，包含樂木集足浴袋詢問、足浴禮盒開箱、樂木集漢方茶分享、睡眠中斷搭泡腳、刮痧長期使用、肩頸僵硬與泡腳/泡熱水腳相關討論。</li>
+            <li>`中藥`、`漢方`、`失眠`、`按摩油` 在本輪搜尋頁結果較少或噪音高；醫療、藥物、心理健康相關內容只做 observation-only，不建議品牌進場。</li>
+            <li>本輪共保留約 55 筆已去重、已篩噪、符合關鍵字與回覆安全規則的發現。</li>
           </ul>
         </article>
         <article class="panel span-12">
@@ -817,6 +816,96 @@
                   <td>不建議品牌回覆，容易進到健康建議與醫療語境。</td>
                   <td>這種搜尋結果真的常常讓人更煩，明明就是睡不著才去查。</td>
                 </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>足浴 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@yunyao_pendulum/post/DQ4J_ttiT5y">2025-11-10 樂木集足浴袋好不好用提問</a><br />使用者爬文後覺得評價兩極，想找可以泡到小腿、又不用插電的足浴方案。</td>
+                  <td>購買決策、求真實心得</td>
+                  <td>品牌可接住疑慮，回應深度、免插電、收納與使用習慣，不硬賣。</td>
+                  <td>爬文越爬越焦慮真的懂。泡得到小腿、又不用插電這兩點很實際，最後會不會常用通常也看好不好收、好不好倒水。</td>
+                  <td>我也會在意能不能泡到小腿，足浴機如果只泡腳踝真的會有點空虛。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>睡不著 / 泡腳桶 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@jyjfromtvxqyj/post/DXt9F7aCqZn">2026-04-29 睡眠中斷、水腫與樂木集泡腳桶</a><br />使用者因半夜醒來、睡眠中斷與水腫抱怨，室友買泡腳桶與漢方湯浴包陪配劇，提到樂木集且稱讚好收納。</td>
+                  <td>品牌提及、生活照顧、可回覆</td>
+                  <td>品牌可回應室友照顧感、配劇泡腳與好收納，避免「改善睡眠/循環」承諾。</td>
+                  <td>室友這個照顧法也太會了，泡腳桶、小零食、配劇，根本是一套「今天先把自己接回來」流程。</td>
+                  <td>好收納真的加分，不然泡腳桶很容易變成角落大型擺設。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>泡腳桶 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@lisaxhg/post/DYEGyeNk4XI">2026-05-08 樂木集泡腳桶與泡腳球</a><br />使用者買樂木集泡腳桶做 SPA，搭配寶可夢泡腳球，分享使用小插曲。</td>
+                  <td>正向、輕鬆、可互動</td>
+                  <td>適合品牌用輕鬆語氣回覆，不必帶產品賣點太重。</td>
+                  <td>泡腳 SPA 加寶可夢泡腳球，這個儀式感很可愛。膜忘記撕也是每個人都可能經歷的使用者教育現場。</td>
+                  <td>這種泡腳球小驚喜好可愛，泡腳突然變成開盲盒。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>足浴禮盒 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@pig_pig_eateat/post/DTxM-2-knOM">2026-01-21 樂木集足浴禮盒開箱</a><br />使用者開箱樂木集足浴禮盒，提到冬天在客廳泡腳、足浴袋顏色可選、禮盒內有 21 包湯浴包。</td>
+                  <td>開箱、禮盒、冬天情境</td>
+                  <td>品牌可回覆客廳泡腳的日常感與禮盒儀式感。</td>
+                  <td>冬天在客廳泡腳真的很懂，身體在放鬆，眼睛還可以繼續追劇，這種懶得剛剛好。</td>
+                  <td>21 包湯浴包感覺很適合慢慢用，禮盒送人也不會太硬。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>足浴 / 上班族 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@grace.khy_/post/DYCaiNgCQcJ">2026-05-07 上班族舒壓小物推薦</a><br />使用者求推薦上班族舒壓小物，分享經前雙腳水腫、下班用足浴袋邊追劇邊泡腳，搭配樂木集漢方湯包。</td>
+                  <td>高相關、舒壓小物、可回覆</td>
+                  <td>品牌可回覆上班累、經前腳腫與追劇泡腳情境，避免宣稱改善。</td>
+                  <td>上班後最需要的舒壓小物，常常不是多厲害，是你累到不想動時還願意拿出來用。</td>
+                  <td>邊追劇邊泡腳聽起來很可以，經前腳悶悶腫腫真的會很想泡熱水。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority high">High</span></td>
+                  <td>漢方茶 / 樂木集</td>
+                  <td><a href="https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0">2025-10-29 樂木集沒有中藥味的漢方茶</a><br />使用者分享樂木集漢方茶，提到無糖、無咖啡因、5 分鐘沖泡、極輕濕/助眠/亮妍，並說沒有中藥味。</td>
+                  <td>品牌提及、茶飲賣點完整</td>
+                  <td>品牌可回覆「沒有中藥味」與願意多喝水的日常感，避開代謝/體質功效。</td>
+                  <td>「沒有中藥味」真的是漢方茶能不能變日常的關鍵，願意一直喝，比一次喝很厲害更重要。</td>
+                  <td>無糖無咖啡因很加分，晚上想喝熱的但不想被咖啡因追著跑。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>漢方茶 / 無糖茶</td>
+                  <td><a href="https://www.threads.com/@pyj0970544446/post/DZzDcQbk5qp">2026-06-22 飯後草本漢方茶飲</a><br />使用者分享飯後喝熱熱的草本漢方茶飲，提到現在多喝無糖茶飲。</td>
+                  <td>今日貼文、日常茶飲</td>
+                  <td>可用小帳自然互動；品牌可觀察飯後熱茶與無糖需求。</td>
+                  <td>飯後一杯熱茶這種習慣很安定，尤其無糖喝久了，反而會開始怕太甜。</td>
+                  <td>飯後熱熱喝一杯很舒服，無糖茶真的會越喝越順。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>濕氣 / 泡腳</td>
+                  <td><a href="https://www.threads.com/@sam__houng/post/DSKPA_ok6vb">2025-12-12 濕氣重與泡熱水腳</a><br />貼文整理濕氣重常見訊號與排濕方式，其中提到睡前泡腳或泡澡。內容帶有健康建議，需謹慎。</td>
+                  <td>健康建議、觀察為主</td>
+                  <td>不建議品牌直接認同功效；可觀察泡腳在濕氣討論中的自然位置。</td>
+                  <td>不建議品牌回覆功效。這篇適合觀察：大家會把泡腳放在「睡前照顧自己」的生活習慣裡。</td>
+                  <td>泡腳至少是很容易開始的小習慣，不用一下子改完整個人生。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>刮痧 / 長期自我照顧</td>
+                  <td><a href="https://www.threads.com/@ranieyang/post/DWjUsSYmBX1">2026-03-31 六年刮痧經驗分享</a><br />使用者分享長期刮痧心得，強調手法、油、方向、工具順手與穩定頻率。</td>
+                  <td>高互動、工具教育、需避開誇大</td>
+                  <td>品牌可觀察刮痧教育語言，若回覆可強調溫和、順手、持續。</td>
+                  <td>「頻率贏過力道」這句很值得收，刮痧真的不是越狠越有效，願意溫柔持續比較難。</td>
+                  <td>工具順手真的會影響會不會每天用，太麻煩就會直接放棄。</td>
+                </tr>
+                <tr>
+                  <td><span class="priority low">Low</span></td>
+                  <td>肩頸僵硬 / 上班族</td>
+                  <td><a href="https://www.threads.com/@mobilitywithnoah/post/DHfSu93z9MW">2025-03-22 肩頸僵硬伸展動作</a><br />健身帳號分享改善肩頸僵硬的動作，主打上班族長時間駝背與肩頸痠痛。</td>
+                  <td>教育型、類目洞察</td>
+                  <td>品牌不必直接進場，可觀察上班族肩頸語言與「每天做一點」的溝通方式。</td>
+                  <td>不建議品牌直接切產品。適合觀察大家怎麼描述肩頸卡住和上班族疲勞。</td>
+                  <td>肩頸僵硬真的很上班族，能每天做一點比收藏一堆影片實際。</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -846,7 +935,7 @@
       </section>
 
       <footer>
-        Last updated: 2026-06-20 12:06 Asia/Taipei。
+        Last updated: 2026-06-22 12:41 Asia/Taipei。
       </footer>
     </main>
     <script>
@@ -889,7 +978,17 @@
         "https://www.threads.com/@xin.yuan1983/post/DYmMtfBlPJ0": ["11", "3", "1"],
         "https://www.threads.com/@kellyjane941413/post/C_NiuC7y7Cg": ["13", "32", "待確認"],
         "https://www.threads.com/@lifewriting_0/post/DZS_AvpgePp": ["21", "9", "1"],
-        "https://www.threads.com/@rong0904_/post/DVqmW8Qk_RI": ["1,563", "81", "15"]
+        "https://www.threads.com/@rong0904_/post/DVqmW8Qk_RI": ["1,563", "81", "15"],
+        "https://www.threads.com/@yunyao_pendulum/post/DQ4J_ttiT5y": ["5", "14", "待確認"],
+        "https://www.threads.com/@jyjfromtvxqyj/post/DXt9F7aCqZn": ["14", "7", "2"],
+        "https://www.threads.com/@lisaxhg/post/DYEGyeNk4XI": ["14", "7", "2"],
+        "https://www.threads.com/@pig_pig_eateat/post/DTxM-2-knOM": ["11", "1", "3"],
+        "https://www.threads.com/@grace.khy_/post/DYCaiNgCQcJ": ["21", "5", "2"],
+        "https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0": ["8", "2", "待確認"],
+        "https://www.threads.com/@pyj0970544446/post/DZzDcQbk5qp": ["3", "待確認", "待確認"],
+        "https://www.threads.com/@sam__houng/post/DSKPA_ok6vb": ["23", "3", "2"],
+        "https://www.threads.com/@ranieyang/post/DWjUsSYmBX1": ["1,135", "38", "115"],
+        "https://www.threads.com/@mobilitywithnoah/post/DHfSu93z9MW": ["928", "13", "52"]
       };
 
       document.querySelectorAll("tbody tr").forEach((row) => {
