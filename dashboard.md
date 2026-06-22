@@ -41,6 +41,7 @@ This pass checked all priority keywords and a rotating broad subset including:
 - `刮痧` / `肩頸僵硬`: found useful education/language around gentle long-term gua sha, tool usability, and office-worker shoulder/neck stiffness.
 - Dashboard now retains about 55 deduplicated, filtered findings that match the current keyword set and reply-safety rules.
 - `dashboard.html` displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
+- `dashboard.html` includes a date-sort control for findings: default order, newest first, and oldest first.
 - Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
 - Priority themes still worth watching are brand mentions, recommendation requests, sleep/night routine posts, no-caffeine tea needs, foot bath purchase intent, gua sha / massage needs, and relevant lifestyle discussions.
 - Sensitive terms such as `濕氣`, `中藥`, `漢方`, `睡不著`, and `失眠` remain observation-first unless the context is clearly daily-life and reply-safe.

@@ -144,6 +144,31 @@
         margin-top: 14px;
       }
 
+      .table-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        margin-top: 14px;
+      }
+
+      .table-toolbar label {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .table-toolbar select {
+        margin-left: 8px;
+        padding: 7px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        color: var(--ink);
+        font: inherit;
+        font-size: 14px;
+      }
+
       table {
         width: 100%;
         min-width: 1300px;
@@ -396,6 +421,17 @@
         </article>
         <article class="panel span-12">
           <h2>目前公開可見發現</h2>
+          <div class="table-toolbar">
+            <p class="muted">可依貼文日期排序；無明確日期的項目會排在最後。</p>
+            <label for="sortByDate">
+              排序
+              <select id="sortByDate">
+                <option value="default">預設排序</option>
+                <option value="newest">最新在前</option>
+                <option value="oldest">最舊在前</option>
+              </select>
+            </label>
+          </div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -410,7 +446,7 @@
                   <th>小帳留言</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="findingsBody">
                 <tr>
                   <td><span class="priority high">High</span></td>
                   <td>足浴 / 樂木集</td>
@@ -991,7 +1027,17 @@
         "https://www.threads.com/@mobilitywithnoah/post/DHfSu93z9MW": ["928", "13", "52"]
       };
 
-      document.querySelectorAll("tbody tr").forEach((row) => {
+      const findingsBody = document.getElementById("findingsBody");
+      const originalFindingRows = Array.from(findingsBody.querySelectorAll("tr"));
+      const getRowDate = (row) => {
+        const contextCell = row.children[2];
+        const match = contextCell ? contextCell.innerText.match(/20\d{2}-\d{2}-\d{2}/) : null;
+        return match ? new Date(`${match[0]}T00:00:00+08:00`).getTime() : 0;
+      };
+
+      originalFindingRows.forEach((row, index) => {
+        row.dataset.originalIndex = String(index);
+        row.dataset.postDate = String(getRowDate(row));
         const link = row.querySelector('a[href*="/post/"]');
         const metrics = link ? publicMetrics[link.href.split("?")[0]] : null;
         const cell = document.createElement("td");
@@ -1000,6 +1046,26 @@
           ? `按讚 ${metrics[0]}<br>留言 ${metrics[1]}<br>轉發 ${metrics[2]}`
           : "按讚 待確認<br>留言 待確認<br>轉發 待確認";
         row.insertBefore(cell, row.children[3]);
+      });
+
+      document.getElementById("sortByDate").addEventListener("change", (event) => {
+        const mode = event.target.value;
+        const rows = [...originalFindingRows];
+        if (mode === "newest" || mode === "oldest") {
+          rows.sort((a, b) => {
+            const dateA = Number(a.dataset.postDate || 0);
+            const dateB = Number(b.dataset.postDate || 0);
+            if (dateA === dateB) {
+              return Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex);
+            }
+            if (!dateA) return 1;
+            if (!dateB) return -1;
+            return mode === "newest" ? dateB - dateA : dateA - dateB;
+          });
+        } else {
+          rows.sort((a, b) => Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex));
+        }
+        findingsBody.replaceChildren(...rows);
       });
 
       const baseKeywords = [
