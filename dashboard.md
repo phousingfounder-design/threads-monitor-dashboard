@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-06-22 12:41 Asia/Taipei
+Last updated: 2026-07-08 13:38 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,21 +25,21 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-06-22 used the logged-in Threads session in the in-app browser. This pass checked the priority set plus broad category terms and added 10 high-confidence findings.
+2026-07-08 attempted to use the logged-in Threads session in the in-app browser, but Threads navigation was blocked by browser policy. This pass used public fallback checks and did not find net-new high-confidence, verifiable Threads URLs beyond the retained prior findings.
 
-This pass checked all priority keywords and a rotating broad subset including:
+This public fallback pass checked all priority keywords and a rotating broad subset including:
 
 - `樂木集`, `LOMOJI`, `足浴`, `泡腳`, `足浴袋`, `泡腳桶`, `漢方湯浴包`, `燕麥浴鹽包`
 - `漢方茶`, `養生茶`, `濕氣`, `中藥`, `漢方`, `睡不著`, `失眠`
 - `刮痧`, `按摩油`, `肩頸僵硬`
 
-- `樂木集`: found net-new logged-in results around foot bath bag purchase questions, foot bath gift box unboxing, and a sleep-interruption / swelling post that mentions 樂木集泡腳桶.
-- `足浴` / `泡腳桶`: found usable purchase-intent and product-use posts, including 足浴袋 comparison, 客廳泡腳, and 上班族舒壓小物.
-- `漢方茶`: found 樂木集 "沒有中藥味的漢方茶" content and a same-day grass-herbal tea drinking post.
-- `濕氣`: found some health-advice-heavy posts; only kept items where the useful angle is lifestyle observation, tea, or foot soaking.
-- `睡不著` / `失眠`: search returned many mental-health or medication-adjacent posts. Those remain observation-only; daily sleep-routine contexts are preferred.
-- `刮痧` / `肩頸僵硬`: found useful education/language around gentle long-term gua sha, tool usability, and office-worker shoulder/neck stiffness.
-- Dashboard now retains about 55 deduplicated, filtered findings that match the current keyword set and reply-safety rules.
+- `樂木集`: retained prior high-confidence results around foot bath bag purchase questions, foot bath gift box unboxing, and a sleep-interruption / swelling post that mentions 樂木集泡腳桶.
+- `足浴` / `泡腳桶`: retained purchase-intent and product-use posts, including 足浴袋 comparison, 客廳泡腳, and 上班族舒壓小物.
+- `漢方茶`: retained 樂木集 "沒有中藥味的漢方茶" content and grass-herbal tea drinking posts.
+- `濕氣`: retained only items where the useful angle is lifestyle observation, tea, or foot soaking.
+- `睡不著` / `失眠`: medical, medication, psychological, or crisis-adjacent content remains observation-only; daily sleep-routine contexts are preferred.
+- `刮痧` / `肩頸僵硬`: retained useful education/language around gentle long-term gua sha, tool usability, and office-worker shoulder/neck stiffness.
+- Dashboard now retains 49 deduplicated, filtered findings that match the current keyword set and reply-safety rules.
 - `dashboard.html` displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - `dashboard.html` includes a date-sort control for findings: default order, newest first, and oldest first.
 - Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
@@ -68,9 +68,6 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | Medium | 泡腳 | https://www.threads.com/@bbkf5_milk/post/DYkFc9-k8qs | User asks whether nail techs soak feet before foot manicure. | 這題很生活欸，感覺可以先問店家，避免現場突然進入驚喜流程。 | 我遇過有先泡的，也遇過沒有，可能真的看店家。 |
 | Medium | 泡腳 | https://www.threads.com/@akai_0320/post/DHN30L4p80h | User asks for help around sweaty feet, vinegar soaking, and odor. | 這種困擾真的會讓人很崩潰，先抱抱。可以先從鞋襪透氣和固定清潔節奏慢慢排查。 | 我之前也是先從換襪子材質開始，真的有差一點。 |
 | Medium | 泡腳 | https://www.threads.com/@ianthe1010/post/DZUTBX4GEqL | User complains about foot or shoe odor before yoga and wanting to wash feet. | 這個去瑜珈前突然懷疑人生的瞬間也太懂，先不要慌，鞋子也列入嫌疑名單。 | 有時候真的是鞋子本人在作怪，先洗腳再換一雙襪子會安心很多。 |
-| Medium | 足浴 | https://www.threads.com/@dayuango/post/DPQvN6yEq7l | Travel/service post about 廈門足浴按摩 and value. | 不建議品牌回覆，適合觀察足浴服務語言。 | 這個比較像旅遊服務分享，小帳也不必硬進場。 |
-| Low | 足浴 | https://www.threads.com/@lu_herbal/post/DQWP8zlAXwx | Other brand/category post about foot bath packs and lazy self-care. | 不建議品牌回覆，避免進入其他品牌貼文。 | 不建議小帳回覆，除非本來就有自然使用經驗。 |
-| Low | 泡腳 | https://www.threads.com/@chenyian_cst_tainan/post/DM0TdZnyC6u | Foot health professional account discusses foot pain / plantar fasciitis. | 不建議品牌回覆，避免碰醫療與療效脈絡。 | 可以純觀察，不建議留言。 |
 | High | 肩頸僵硬 / 肩頸按摩器 | https://www.threads.com/@pay.u820/post/DThjHP7kcOZ | User asks for real-use recommendations for shoulder/neck massagers because work makes their neck hurt. | 工作把肩頸逼到唉唉叫真的太有畫面。這種東西最重要還是要自己會想每天拿出來用。 | 我也想知道真心用過的推薦，肩頸硬起來真的會影響整天心情。 |
 | High | 刮痧 / 肩頸按摩 | https://www.threads.com/@cindy220125/post/DY7B3o-mmhH | User asks for hair-wash places in Kaohsiung with shoulder-neck massage or gua sha. | 洗頭加肩頸按摩真的很懂，頭洗完、肩頸也鬆一點，才有一種真的下班了的感覺。 | 這種店如果按得好會想固定報到，肩頸按摩是靈魂。 |
 | Medium | 按摩油 | https://www.threads.com/@astro.tale_aroma/post/DV8o5eOE6hN | Aromatherapist discusses how dry/tired skin can absorb massage oil quickly. | 身體很累的時候，皮膚好像也會一起喊「我需要被照顧一下」。按摩油這題很生活。 | 皮膚吃油很快這件事我有感，尤其冬天或很累的時候。 |
@@ -78,7 +75,6 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | Medium | 撥筋 / 刮痧 | https://www.threads.com/@bunshen_meridians/post/DB3xnn6MULK | Meridian account shares at-home head massage with gua sha board or fist. | 在家頭部放鬆這種小儀式很可以，重點是慢慢來，不是把自己當麵團揉。 | 頭皮放鬆真的舒服，我都洗完頭比較有動力按一下。 |
 | Medium | 肩頸僵硬 | https://www.threads.com/@foooodie_s/post/DYzcY-ck9NE | User asks how backpack travelers deal with shoulder pain. | 旅行背包背久，肩膀真的會先開始懷疑人生。回家後能好好放鬆一下很必要。 | 背包旅行肩膀酸爆懂，肩帶調好跟每天放鬆都很重要。 |
 | Low | 無咖啡因茶 / 代謝茶 | https://www.threads.com/@alex1100106/post/DY3sF5Hj0DE | User mentions seeing a metabolism tea at POYA and asks whether it works. | 不建議品牌直接回「有效」。可觀察無咖啡因/代謝茶討論熱度。 | 這種茶我會先看成分跟咖啡因，晚上喝的話無咖啡因比較安心。 |
-| Low | 漢方茶 / 藥膳茶 | https://www.threads.com/@kiyo_healthylife/post/DZZPVUrEwEs | Japanese health account says herbal/medicinal tea is not just tea. | 類目觀察。若回覆，應避免功效宣稱，改聊日常飲用習慣。 | 這種茶如果味道不要太重，會比較容易每天喝。 |
 | High | 泡腳 / 樂木集 | https://www.threads.com/@yyingchi/post/DZR3hfckyNH | User mentions 加班、焦慮、睡不好、水腫, bought a foot bath bucket, and mentions 樂木集湯包 and 燕麥款. | 加班後願意回到泡腳日常，感覺像是把自己從工作裡慢慢撈回來。燕麥款那個期待感我懂。 | 浴缸泡腳真的麻煩，足浴桶看起來比較容易養成習慣。 |
 | High | 泡腳桶 / 樂木集 | https://www.threads.com/@wwr.98/post/DOpwvmLgawJ | User compares 阿嬤的配方 vs 樂木集 for sleep-before foot soaking. | 睡前泡腳最怕的是買了之後懶得拿出來用，所以好收、好倒水這種小事真的會變大事。 | 我會先看收納跟倒水方不方便，因為泡腳最難的是持續用。 |
 | High | 泡腳桶 | https://www.threads.com/@mirahiarashi/post/DTcAheako6l | User wants a foot bath bucket but worries about heavy water carrying. | 提水真的會決定泡腳桶會不會從療癒用品變成健身器材，這題很實際。 | 我也會怕提水麻煩，感覺好倒水比外型更重要。 |
@@ -96,7 +92,6 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | Medium | 無咖啡因茶 | https://www.threads.com/@duadua7337/post/DZCRmjvkxDa | User asks for good caffeine-free milk tea recommendations. | 想喝好喝的又不想被咖啡因綁架，這個需求真的很晚上。 | 無咖啡因很重要，晚上想喝熱的但又不想失眠。 |
 | Medium | 無咖啡因茶 / 台灣品牌 | https://www.threads.com/@cc_7ching/post/DVSzhdNkRSw | User asks Taiwan brands to recommend must-buy items. | 台灣品牌推薦串好適合慢慢挖寶，日常會真的用到的東西最值得被看見。 | 這種串超好逛，會想看大家推薦真的回購的台灣品牌。 |
 | Medium | 按摩油 / 芳療法規 | https://www.threads.com/@cathy.aroma/post/DZXrZJak4kl | Aromatherapist discusses PIF rules and massage oil blending. | 這種專業題真的要小心，按摩油不只是香味，標示跟使用情境都會被放大檢視。 | 芳療師會在意這個很合理，感覺之後買油也會更看標示。 |
-| Low | 按摩油 / 油壓偏好 | https://www.threads.com/@looooouis__/post/DYPpRffk0tg | User likes oil massage but worries whether two-hour oil massage is tiring for therapists. | 喜歡油壓又怕造成對方困擾，這個人也太替按摩師著想了。 | 油壓的放鬆感真的跟指壓不一樣，我懂為什麼會指定。 |
 | High | 濕氣 | https://www.threads.com/@yumi_yumi329/post/DW2EPgUEwsI | User asks people to share the most noticeable ways they deal with body dampness. High engagement and likely useful comments. | 這題留言應該會很多流派。比起追求立刻有感，我會更相信那種每天做得到的小習慣。 | 我也會想看大家分享，茶飲、泡腳、少冰這種日常型方法比較容易持續。 |
 | Medium | 濕氣 / 中藥 | https://www.threads.com/@mark.tagram/post/DWJf7YgCXO1 | User says they are already taking Chinese medicine but still feel heavy and tired, joking about Hsinchu humidity. | 新竹那句太懂，感覺有時候人還沒開始努力，天氣已經先出手了。日常照顧只能慢慢找自己做得到的節奏。 | 新竹濕冷真的會讓人覺得全身很重，熱茶跟泡腳至少是心情上有被安撫到。 |
 | Medium | 濕氣 / 咖啡 / 生活習慣 | https://www.threads.com/@otterpinku/post/DBK0IAhyzkZ | User is trying to adjust habits around dampness, has stopped iced drinks, but finds coffee hard to quit. | 咖啡真的不是說戒就戒，日常調整比較像慢慢換路線，不是突然變成另一個人。 | 我也覺得先少冰、晚上換無咖啡因熱飲，比硬戒咖啡實際一點。 |
@@ -115,11 +110,10 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | Medium | 漢方茶 / 無糖茶 | https://www.threads.com/@pyj0970544446/post/DZzDcQbk5qp | Same-day post about drinking hot grass-herbal tea after meals and drinking mostly unsweetened tea. | 飯後一杯熱茶這種習慣很安定，尤其無糖喝久了，反而會開始怕太甜。 | 飯後熱熱喝一杯很舒服，無糖茶真的會越喝越順。 |
 | Medium | 濕氣 / 泡腳 | https://www.threads.com/@sam__houng/post/DSKPA_ok6vb | Health-advice-heavy post about dampness includes bedtime foot soaking or hot baths. Keep observation-only. | 不建議品牌回覆功效。這篇適合觀察：大家會把泡腳放在「睡前照顧自己」的生活習慣裡。 | 泡腳至少是很容易開始的小習慣，不用一下子改完整個人生。 |
 | Medium | 刮痧 / 長期自我照顧 | https://www.threads.com/@ranieyang/post/DWjUsSYmBX1 | Long-term gua sha post emphasizes technique, oil, direction, usable tools, gentle consistency, and not over-scraping. | 「頻率贏過力道」這句很值得收，刮痧真的不是越狠越有效，願意溫柔持續比較難。 | 工具順手真的會影響會不會每天用，太麻煩就會直接放棄。 |
-| Low | 肩頸僵硬 / 上班族 | https://www.threads.com/@mobilitywithnoah/post/DHfSu93z9MW | Fitness account shares shoulder/neck stiffness stretch for office-worker posture. | 不建議品牌直接切產品。適合觀察大家怎麼描述肩頸卡住和上班族疲勞。 | 肩頸僵硬真的很上班族，能每天做一點比收藏一堆影片實際。 |
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. This run used a logged-in in-app browser session and saw richer results than public fallback, but comment/reply coverage is still limited by Threads display behavior. For fuller coverage, the monitor may need an approved listening tool or manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-07-08, the in-app browser could not open Threads because of browser policy, and public search did not expose reliable net-new Threads URLs for the required keyword set. Comment/reply coverage is therefore limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 
