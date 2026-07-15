@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-07-10 10:24 Asia/Taipei
+Last updated: 2026-07-15 08:18 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,7 +25,7 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-07-10 attempted to use the logged-in Threads session in the in-app browser first, but Threads navigation timed out before a readable logged-in result page could be confirmed. Public fallback checks also did not surface net-new high-confidence, verifiable Threads URLs beyond the retained prior findings.
+2026-07-15 attempted to use the logged-in Threads session in the Codex in-app browser first, but direct navigation to Threads was rejected by browser security policy. This run therefore used public fallback searches only. Public checks did not surface net-new high-confidence, verifiable Threads URLs beyond the retained prior findings.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
@@ -39,7 +39,7 @@ This public fallback pass checked all priority keywords and a rotating broad sub
 - `濕氣`: retained only items where the useful angle is lifestyle observation, tea, or foot soaking.
 - `睡不著` / `失眠`: medical, medication, psychological, or crisis-adjacent content remains observation-only; daily sleep-routine contexts are preferred.
 - `刮痧` / `肩頸僵硬`: retained useful education/language around gentle long-term gua sha, tool usability, and office-worker shoulder/neck stiffness.
-- Dashboard still retains 49 deduplicated, filtered findings that match the current keyword set and reply-safety rules.
+- Dashboard retains 49 deduplicated, filtered findings that match the current keyword set and reply-safety rules.
 - `dashboard.html` displays engagement metrics per item when publicly visible: likes, comments, and reposts. Some values remain `待確認` when Threads public search does not expose a reliable labeled count.
 - `dashboard.html` includes a date-sort control for findings: default order, newest first, and oldest first.
 - Dashboard now includes a browser-side keyword manager. It can add keywords locally and generate/copy/download an updated `keywords.json`. Because GitHub Pages is static, this does not directly write back to the repository.
@@ -113,7 +113,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-07-10, the in-app browser could not confirm a readable logged-in Threads page before timing out, and public search did not expose reliable net-new Threads URLs for the required keyword set. Comment/reply coverage is therefore limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-07-15, the in-app browser rejected direct Threads navigation under browser security policy, and public search did not expose reliable net-new Threads URLs for the required keyword set. Comment/reply coverage is therefore limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 
