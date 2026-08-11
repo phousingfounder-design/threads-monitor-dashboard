@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-07-20 09:42 Asia/Taipei
+Last updated: 2026-08-11 14:32 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,7 +25,7 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-07-20 attempted to use the logged-in Threads session in the Codex in-app browser first, but the browser connection could not initialize, so login status and visible comments could not be confirmed. This run therefore used public fallback searches only. Public checks did not surface net-new high-confidence, verifiable Threads URLs beyond the retained prior findings.
+2026-08-11 attempted to use the logged-in Threads session in the Codex in-app browser first, but the required browser client was unavailable, so login status and visible comments/replies could not be confirmed. This run therefore used public fallback searches only. Public checks across all required priority terms and the rotating broad subset did not surface net-new high-confidence, verifiable Threads URLs beyond the retained prior findings.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
@@ -113,7 +113,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-07-20, the in-app browser connection could not initialize, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-08-11, the in-app browser client required for the logged-in session was unavailable, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 
