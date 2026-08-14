@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-08-12 10:09 Asia/Taipei
+Last updated: 2026-08-14 09:26 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,7 +25,7 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-08-12 connected to the Codex in-app browser and attempted the preferred logged-in Threads flow first, but direct Threads navigation was rejected by browser security policy. Login status and current visible comments/replies therefore could not be confirmed. Public fallback searches across all required priority terms and the rotating broad subset returned no net-new high-confidence, verifiable Threads URLs beyond the retained prior findings.
+2026-08-14 connected to the Codex in-app browser and attempted the preferred logged-in Threads flow first, but direct Threads navigation was rejected by browser security policy. Login status and current visible comments/replies therefore could not be confirmed. Public fallback searches across all required priority terms and the rotating broad subset returned no net-new high-confidence, verifiable Threads URLs beyond the retained prior findings; unrelated brand, marketplace, forum, and general wellness pages were excluded.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
@@ -113,7 +113,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-08-12, direct Threads navigation in the in-app browser was rejected by browser security policy, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-08-14, direct Threads navigation in the in-app browser was rejected by browser security policy, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 
