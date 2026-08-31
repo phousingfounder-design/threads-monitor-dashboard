@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-08-28 09:57 Asia/Taipei
+Last updated: 2026-08-31 09:51 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,7 +25,7 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-08-28 connected to the Codex in-app browser and attempted the preferred logged-in Threads flow first, but direct Threads navigation was rejected by browser site-permission policy. Login status and current visible comments/replies therefore could not be confirmed. Public fallback searches across all required priority terms and the rotating broad subset returned no net-new high-confidence, verifiable Threads URLs beyond the retained prior findings; unrelated, non-Threads, and unverifiable results were excluded.
+2026-08-31 connected to the Codex in-app browser and attempted the preferred logged-in Threads flow first, but direct Threads navigation was rejected by browser site-permission policy. Login status and current visible comments/replies therefore could not be confirmed. Public fallback searches across all required priority terms and the rotating broad subset returned no net-new high-confidence, verifiable Threads URLs beyond the retained prior findings; unrelated, non-Threads, medical-claim-heavy, and unverifiable results were excluded.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
