@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-09-23 09:50 Asia/Taipei
+Last updated: 2026-09-28 15:46 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -27,13 +27,13 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 All retained posts, dates, and engagement values are historical and were not reverified this run. No fresh comments/replies were accessible. Reopen the source before using any reply draft. No replies were sent.
 
-2026-09-23 attempted the preferred logged-in Threads flow first, but browser site-permission policy denied access to Threads in this run. Login status and current visible comments/replies therefore could not be confirmed. Twenty-six public web searches covering all priority and required terms, plus rotating broad terms, returned empty results across threads.net and threads.com. This does not establish that no matching posts exist. No current post or comment content could be verified.
+2026-09-28 attempted the preferred logged-in Threads flow first, but browser site-permission policy denied access to Threads in this run. Login status and current visible comments/replies therefore could not be confirmed. Twenty-six public web searches covering all priority and required terms, plus rotating broad terms, returned empty results across threads.net and threads.com. This does not establish that no matching posts exist. No current post or comment content could be verified.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
 - `樂木集`, `LOMOJI`, `足浴`, `泡腳`, `足浴袋`, `泡腳桶`, `漢方湯浴包`, `燕麥浴鹽包`
 - `漢方茶`, `養生茶`, `濕氣`, `中藥`, `漢方`, `睡不著`, `失眠`
-- `刮痧`, `按摩油`, `肩頸僵硬`, `居家SPA`, `無咖啡因茶`, `足浴禮盒`, `手腳冰冷`, `筋膜放鬆`, `久坐肩頸`
+- `刮痧`, `按摩油`, `肩頸僵硬`, `居家SPA`, `無咖啡因茶`, `下班泡腳`, `沒有中藥味`, `刮痧板`, `久站腿酸`
 
 - `樂木集`: retained prior high-confidence results around foot bath bag purchase questions, foot bath gift box unboxing, and a sleep-interruption / swelling post that mentions 樂木集泡腳桶.
 - `足浴` / `泡腳桶`: retained purchase-intent and product-use posts, including 足浴袋 comparison, 客廳泡腳, and 上班族舒壓小物.
@@ -110,13 +110,13 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | High | 足浴禮盒 / 樂木集 | https://www.threads.com/@pig_pig_eateat/post/DTxM-2-knOM @pig_pig_eateat · 2026-01-21 樂木集足浴禮盒開箱 使用者開箱樂木集足浴禮盒，提到冬天在客廳泡腳、足浴袋顏色可選、禮盒內有 21 包湯浴包。 | 11 / 1 / 3 (未重驗) | 開箱、禮盒、冬天情境 | 品牌可回覆客廳泡腳的日常感與禮盒儀式感。 | 冬天在客廳泡腳真的很懂，身體在放鬆，眼睛還可以繼續追劇，這種懶得剛剛好。 | 21 包湯浴包感覺很適合慢慢用，禮盒送人也不會太硬。 |
 | High | 足浴 / 上班族 / 樂木集 | https://www.threads.com/@grace.khy_/post/DYCaiNgCQcJ @grace.khy_ · 2026-05-07 上班族舒壓小物推薦 使用者求推薦上班族舒壓小物，分享經前雙腳水腫、下班用足浴袋邊追劇邊泡腳，搭配樂木集漢方湯包。 | 21 / 5 / 2 (未重驗) | 高相關、舒壓小物、可回覆 | 品牌可回覆上班累、經前腳腫與追劇泡腳情境，避免宣稱改善。 | 上班後最需要的舒壓小物，常常不是多厲害，是你累到不想動時還願意拿出來用。 | 邊追劇邊泡腳聽起來很可以，經前腳悶悶腫腫真的會很想泡熱水。 |
 | High | 漢方茶 / 樂木集 | https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0 @flower_weiwei · 2025-10-29 樂木集沒有中藥味的漢方茶 使用者分享樂木集漢方茶，提到無糖、無咖啡因、5 分鐘沖泡、極輕濕/助眠/亮妍，並說沒有中藥味。 | 8 / 2 / 待確認 (未重驗) | 品牌提及、茶飲賣點完整 | 品牌可回覆「沒有中藥味」與願意多喝水的日常感，避開代謝/體質功效。 | 「沒有中藥味」真的是漢方茶能不能變日常的關鍵，願意一直喝，比一次喝很厲害更重要。 | 無糖無咖啡因很加分，晚上想喝熱的但不想被咖啡因追著跑。 |
-| Medium | 漢方茶 / 無糖茶 | https://www.threads.com/@pyj0970544446/post/DZzDcQbk5qp @pyj0970544446 · 2026-06-22 飯後草本漢方茶飲 使用者分享飯後喝熱熱的草本漢方茶飲，提到現在多喝無糖茶飲。 | 3 / 待確認 / 待確認 (未重驗) | 今日貼文、日常茶飲 | 可用小帳自然互動；品牌可觀察飯後熱茶與無糖需求。 | 飯後一杯熱茶這種習慣很安定，尤其無糖喝久了，反而會開始怕太甜。 | 飯後熱熱喝一杯很舒服，無糖茶真的會越喝越順。 |
+| Medium | 漢方茶 / 無糖茶 | https://www.threads.com/@pyj0970544446/post/DZzDcQbk5qp @pyj0970544446 · 2026-06-22 飯後草本漢方茶飲 使用者分享飯後喝熱熱的草本漢方茶飲，提到現在多喝無糖茶飲。 | 3 / 待確認 / 待確認 (未重驗) | 歷史貼文、日常茶飲 | 可用小帳自然互動；品牌可觀察飯後熱茶與無糖需求。 | 飯後一杯熱茶這種習慣很安定，尤其無糖喝久了，反而會開始怕太甜。 | 飯後熱熱喝一杯很舒服，無糖茶真的會越喝越順。 |
 | Medium | 濕氣 / 泡腳 | https://www.threads.com/@sam__houng/post/DSKPA_ok6vb @sam__houng · 2025-12-12 濕氣重與泡熱水腳 貼文整理濕氣重常見訊號與排濕方式，其中提到睡前泡腳或泡澡。內容帶有健康建議，需謹慎。 | 23 / 3 / 2 (未重驗) | 健康建議、觀察為主 | 不建議品牌直接認同功效；可觀察泡腳在濕氣討論中的自然位置。 | 不建議品牌回覆功效。這篇適合觀察：大家會把泡腳放在「睡前照顧自己」的生活習慣裡。 | 泡腳至少是很容易開始的小習慣，不用一下子改完整個人生。 |
 | Medium | 刮痧 / 長期自我照顧 | https://www.threads.com/@ranieyang/post/DWjUsSYmBX1 @ranieyang · 2026-03-31 六年刮痧經驗分享 使用者分享長期刮痧心得，強調手法、油、方向、工具順手與穩定頻率。 | 1,135 / 38 / 115 (未重驗) | 高互動、工具教育、需避開誇大 | 品牌可觀察刮痧教育語言，若回覆可強調溫和、順手、持續。 | 「頻率贏過力道」這句很值得收，刮痧真的不是越狠越有效，願意溫柔持續比較難。 | 工具順手真的會影響會不會每天用，太麻煩就會直接放棄。 |
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-09-23, browser site-permission policy denied access to Threads, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-09-28, browser site-permission policy denied access to Threads, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 
