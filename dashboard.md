@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-09-28 15:46 Asia/Taipei
+Last updated: 2026-10-02 08:00 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -27,13 +27,13 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 All retained posts, dates, and engagement values are historical and were not reverified this run. No fresh comments/replies were accessible. Reopen the source before using any reply draft. No replies were sent.
 
-2026-09-28 attempted the preferred logged-in Threads flow first, but browser site-permission policy denied access to Threads in this run. Login status and current visible comments/replies therefore could not be confirmed. Twenty-six public web searches covering all priority and required terms, plus rotating broad terms, returned empty results across threads.net and threads.com. This does not establish that no matching posts exist. No current post or comment content could be verified.
+2026-10-02 attempted the preferred logged-in Threads flow first, but browser site-permission policy denied access to Threads in this run. Login status and current visible comments/replies therefore could not be confirmed. Eight public web searches covering all priority and required terms, plus rotating broad terms, returned no verifiable Threads results across threads.net and threads.com. This does not establish that no matching posts exist. No current post or comment content could be verified.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
 - `樂木集`, `LOMOJI`, `足浴`, `泡腳`, `足浴袋`, `泡腳桶`, `漢方湯浴包`, `燕麥浴鹽包`
 - `漢方茶`, `養生茶`, `濕氣`, `中藥`, `漢方`, `睡不著`, `失眠`
-- `刮痧`, `按摩油`, `肩頸僵硬`, `居家SPA`, `無咖啡因茶`, `下班泡腳`, `沒有中藥味`, `刮痧板`, `久站腿酸`
+- `刮痧`, `按摩油`, `肩頸僵硬`, `居家SPA`, `無咖啡因茶`, `下班泡腳`, `沒有中藥味`, `刮痧板`, `久站腿酸`, `低頭族`, `筋膜放鬆`
 
 - `樂木集`: retained prior high-confidence results around foot bath bag purchase questions, foot bath gift box unboxing, and a sleep-interruption / swelling post that mentions 樂木集泡腳桶.
 - `足浴` / `泡腳桶`: retained purchase-intent and product-use posts, including 足浴袋 comparison, 客廳泡腳, and 上班族舒壓小物.
@@ -116,7 +116,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-09-28, browser site-permission policy denied access to Threads, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-02, browser site-permission policy denied access to Threads, and public search did not expose reliable net-new Threads URLs for the required keyword set. Login state and current comment/reply visibility could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
 
 ## Added Keyword Pass
 
