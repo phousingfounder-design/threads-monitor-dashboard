@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-10-12 08:00 Asia/Taipei
+Last updated: 2026-10-14 12:43 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -27,7 +27,7 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 All retained posts, dates, and engagement values are historical and were not reverified this run. No fresh comments/replies were accessible. Reopen the source before using any reply draft. No replies were sent.
 
-2026-10-12 attempted the preferred logged-in Threads flow first, but the in-app browser timed out before a readable Threads page loaded. Current login state, visible comments/replies, and live engagement could not be confirmed. Three grouped public web-index search passes covered all priority and required terms, plus rotating broad terms, and returned no verifiable Threads results; unrelated general-web results were excluded. This does not establish that no matching posts exist. No current post or comment content could be verified.
+2026-10-14 attempted the preferred in-app Threads search first. Threads showed an Instagram login prompt and did not expose search results, so the current session cannot be treated as logged in. Visible comments/replies and live engagement could not be confirmed. Grouped public Threads-index searches covered every priority and required term, plus the rotating broad terms below; the Threads-only queries returned no verifiable results, and broader search results were unrelated general-web pages that were excluded. This does not establish that no matching posts exist. No current post or comment content could be verified.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
@@ -116,7 +116,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-12, the in-app Threads page timed out before it became readable, and public search did not expose reliable net-new Threads URLs for the required keyword set. Current comment/reply visibility and engagement counts could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor may need an approved listening tool, a working logged-in session, or manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-14, the in-app Threads search displayed an Instagram login prompt rather than readable results, and public Threads-index searches did not expose reliable net-new URLs for the required keyword set. Current comment/reply visibility and engagement counts could not be confirmed, so coverage is limited to prior visible captures and public index snippets. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
 
 ## Added Keyword Pass
 
