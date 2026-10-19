@@ -403,7 +403,7 @@
           <ul class="reply-list">
             <li>Threads 公開搜尋不一定露出所有結果。</li>
             <li>留言通常比貼文更容易被登入牆或平台限制擋住。</li>
-            <li>2026-10-16 本輪優先嘗試 in-app Threads session，但搜尋頁顯示 Instagram 登入提示，無法將目前 session 視為已登入。公開貼文頁可讀，已 spot-check 1 筆既有來源的日期與互動數；留言／回覆仍受登入牆限制，無法確認。</li>
+            <li>2026-10-19 本輪沒有可用的已登入 session；搜尋頁顯示 Instagram 登入提示，故以登出狀態處理。公開貼文頁可讀，已 spot-check 1 筆既有來源的日期與互動數；留言／回覆仍受登入牆限制，無法確認。</li>
             <li>若要完整留言巡查，會需要可用的登入 session、社群聆聽工具，或可授權的資料匯出。</li>
           </ul>
         </article>
@@ -413,7 +413,7 @@
         <article class="panel span-12">
           <h2>本輪搜尋摘要（無可驗證新增）</h2>
           <ul>
-            <li>2026-10-16 公開 fallback 以 4 次分組 Threads 限定索引查詢涵蓋所有優先及指定詞；含 `樂木集`、`LOMOJI`、`足浴`、`泡腳`、`足浴袋`、`泡腳桶`、`漢方湯浴包`、`燕麥浴鹽包`、`漢方茶`、`養生茶`、`濕氣`、`中藥`、`漢方`、`睡不著`、`失眠`、`刮痧`、`按摩油`、`肩頸僵硬`，並輪查 `下班泡腳`、`久站腿酸`、`手腳冰冷`、`溫感足浴袋`、`無糖茶`、`沒有中藥味`、`助眠茶`、`刮痧板`、`撥筋棒`、`筋膜放鬆`、`低頭族`、`久坐肩頸`。Threads 限定查詢未回傳可驗證結果；不代表平台上沒有相關討論。</li>
+            <li>2026-10-19 公開 fallback 以 4 次分組 Threads 限定索引查詢涵蓋所有優先及指定詞；含 `樂木集`、`LOMOJI`、`足浴`、`泡腳`、`足浴袋`、`泡腳桶`、`漢方湯浴包`、`燕麥浴鹽包`、`漢方茶`、`養生茶`、`濕氣`、`中藥`、`漢方`、`睡不著`、`失眠`、`刮痧`、`按摩油`、`肩頸僵硬`，並輪查 `下班泡腳`、`久站腿酸`、`手腳冰冷`、`溫感足浴袋`、`無糖茶`、`沒有中藥味`、`助眠茶`、`刮痧板`、`撥筋棒`、`筋膜放鬆`、`低頭族`、`久坐肩頸`。Threads 限定查詢未回傳可驗證結果；不代表平台上沒有相關討論。</li>
             <li>公開貼文頁 spot-check `@a_ch_u` 顯示 2026-05-07、23 讚、6 留言、3 轉發；登入牆未讓本輪讀取可見回覆。未新增可驗證的高信度 Threads URL；保留先前可見且已去重的品牌提及、購買意圖、夜間儀式、無咖啡因茶、刮痧按摩與生活討論。</li>
             <li>本輪 Threads 限定搜尋未回傳結果，無法推論平台實際討論量；醫療、藥物、心理健康相關內容只做 observation-only，不建議品牌進場。</li>
             <li>本輪共保留 49 筆已去重、已篩噪、符合關鍵字與回覆安全規則的發現。</li>
@@ -422,7 +422,7 @@
         <article class="panel span-12">
           <h2>保留發現（1 筆公開來源已 spot-check）</h2>
           <div class="table-toolbar">
-            <p class="muted">以下為去重留存；@a_ch_u 的日期與互動數已於 2026-10-16 公開頁 spot-check。其餘貼文、留言、日期與互動數皆為歷史值；回覆前請重開原文確認。可依貼文日期排序。</p>
+            <p class="muted">以下為去重留存；@a_ch_u 的日期與互動數已於 2026-10-19 公開頁 spot-check。其餘貼文、留言、日期與互動數皆為歷史值；回覆前請重開原文確認。可依貼文日期排序。</p>
             <label for="sortByDate">
               排序
               <select id="sortByDate">
@@ -917,7 +917,7 @@
       </section>
 
       <footer>
-        Last updated: 2026-10-16 09:03 Asia/Taipei。
+        Last updated: 2026-10-19 09:18 Asia/Taipei。
       </footer>
     </main>
     <script>
@@ -988,7 +988,7 @@
         const cell = document.createElement("td");
         cell.className = "metrics";
         cell.innerHTML = metrics
-          ? `按讚 ${metrics[0]}<br>留言 ${metrics[1]}<br>轉發 ${metrics[2]}<br><small>${spotCheckedUrls.has(link.href.split("?")[0]) ? "2026-10-16 公開頁 spot-check" : "歷史值・未重驗"}</small>`
+          ? `按讚 ${metrics[0]}<br>留言 ${metrics[1]}<br>轉發 ${metrics[2]}<br><small>${spotCheckedUrls.has(link.href.split("?")[0]) ? "2026-10-19 公開頁 spot-check" : "歷史值・未重驗"}</small>`
           : "按讚 待確認<br>留言 待確認<br>轉發 待確認";
         row.insertBefore(cell, row.children[3]);
       });

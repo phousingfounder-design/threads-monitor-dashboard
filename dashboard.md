@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-10-16 09:03 Asia/Taipei
+Last updated: 2026-10-19 09:18 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,7 +25,7 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-10-16 attempted the preferred in-app Threads search first. The search page showed an Instagram login prompt, so the session is not treated as logged in. Direct public post pages remain readable: the existing [@a_ch_u 樂木集泡腳桶貼文](https://www.threads.com/@a_ch_u/post/DYCYV2Jki08) was spot-checked and still displayed its 2026-05-07 date plus 23 likes, 6 comments, and 3 reposts. Its comment thread stayed behind the login wall. No replies were sent.
+2026-10-19 attempted the preferred in-app Threads search first. No saved logged-in session was available; the search page displayed an Instagram login prompt, so the session is treated as logged out. Direct public post pages remain readable: the existing [@a_ch_u 樂木集泡腳桶貼文](https://www.threads.com/@a_ch_u/post/DYCYV2Jki08) was spot-checked and displayed its 2026-05-07 date plus 23 likes, 6 comments, and 3 reposts. Its reply thread was unavailable behind the login wall. No replies were sent.
 
 Public Threads-index fallback queries covered every priority and required term, plus the rotating broad terms below. The grouped Threads-only queries returned no verifiable net-new URLs; unrelated general-web pages were excluded. This does not establish that no matching posts exist. The retained set remains the existing 49 URL-deduplicated, filtered findings; all except the spot-checked source are historical references and must be reopened before using any reply draft.
 
@@ -64,7 +64,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 | Priority | Keyword | Source / account / date / context | Historical likes / comments / reposts | Sentiment | Suggested action | Brand editor draft | Small-account draft |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| High | 足浴 / 樂木集 | https://www.threads.com/@a_ch_u/post/DYCYV2Jki08 @a_ch_u · 2026-05-07 樂木集泡腳桶提及 提到樂木集泡腳桶、漢方湯浴包、新款出水口、下班泡腳與倒掛晾乾設計。 | 23 / 6 / 3 (2026-10-16 公開頁 spot-check) | 正向、細節具體、生活化 | 品牌小編可回覆，抓出水口和下班儀式感。 | 出水口跟能倒掛晾乾這種小細節，真的會在浴室差點變水災的瞬間突然變偉大。 | 倒掛晾乾跟好收納好重要，浴室東西真的最怕越放越多。 |
+| High | 足浴 / 樂木集 | https://www.threads.com/@a_ch_u/post/DYCYV2Jki08 @a_ch_u · 2026-05-07 樂木集泡腳桶提及 提到樂木集泡腳桶、漢方湯浴包、新款出水口、下班泡腳與倒掛晾乾設計。 | 23 / 6 / 3 (2026-10-19 公開頁 spot-check) | 正向、細節具體、生活化 | 品牌小編可回覆，抓出水口和下班儀式感。 | 出水口跟能倒掛晾乾這種小細節，真的會在浴室差點變水災的瞬間突然變偉大。 | 倒掛晾乾跟好收納好重要，浴室東西真的最怕越放越多。 |
 | High | 足浴 / 樂木集 | https://www.threads.com/@oyhuahua/post/DX_-wdAjzvE @oyhuahua · 2026-05-06 長工時泡腳體驗 使用者說坐整天腿腫，使用樂木集後被泡腳「ㄉㄧㄠˊ住」，也提到燕麥湯浴包與睡眠。 | 25 / 15 / 4 (未重驗) | 正向、共感強、互動佳 | 品牌小編可回覆；小帳可接工作疲勞和睡眠。 | 「本來覺得泡腳是老人行為」這句太真，很多快樂都是長大後才突然懂。下班後把腳交給熱水真的很可以。 | 坐一整天腿腫真的懂，泡完比較好睡這點好心動，感覺很適合配追劇。 |
 | High | 泡腳 / 樂木集 | https://www.threads.com/@debbyhair__/post/DYwPt0mE-Mz @debbyhair__ · 2026-05-25 品牌提及 使用者分享泡腳自由、邊打遊戲邊泡腳，並提醒水不要裝太滿。 | 16 / 10 / 4 (未重驗) | 正向、生活感、有笑點 | 品牌小編可回覆；小帳可輕鬆附和。 | 這個水裝太滿的畫面感太強了，泡腳自由第一課：先不要太相信自己的手感。 | 邊打遊戲邊泡腳聽起來也太爽，我也想試試但感覺水位真的要小心。 |
 | Medium | 泡腳 | https://www.threads.com/@bbkf5_milk/post/DYkFc9-k8qs @bbkf5_milk · 2026-05-20 美甲流程提問 使用者詢問足部美甲前是否會先泡腳。 | 待確認 / 待確認 / 待確認 (未重驗) | 好奇、實用 | 小帳可自然分享經驗；品牌只在能提供資訊時加入。 | 這題很生活欸，感覺可以先問店家，避免現場突然進入驚喜流程。 | 我遇過有先泡的，也遇過沒有，可能真的看店家。 |
@@ -116,7 +116,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-16, the in-app Threads search displayed an Instagram login prompt rather than readable results. Public direct post pages can expose the post itself and labeled engagement, but comments/replies were hidden behind login; only one retained public source was spot-checked. Public Threads-index searches did not expose reliable net-new URLs for the required keyword set. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-19, no saved logged-in session was available and the in-app Threads search displayed an Instagram login prompt rather than readable results. Public direct post pages exposed the post itself and labeled engagement, but comments/replies were hidden behind login; only one retained public source was spot-checked. Public Threads-index searches did not expose reliable net-new URLs for the required keyword set. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
 
 ## Added Keyword Pass
 
