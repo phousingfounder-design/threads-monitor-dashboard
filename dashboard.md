@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-10-19 09:27 Asia/Taipei
+Last updated: 2026-10-21 09:53 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,9 +25,9 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-10-19 attempted the preferred in-app Threads search first. No saved logged-in session was available; the search page displayed an Instagram login prompt, so the session is treated as logged out. Direct public post pages remain readable: [@a_ch_u 樂木集泡腳桶貼文](https://www.threads.com/@a_ch_u/post/DYCYV2Jki08) displayed 2026-05-07, 23 likes, 6 comments, and 3 reposts; [@flower_weiwei 樂木集漢方茶貼文](https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0) displayed 2025-10-28, 8 likes, 2 comments, and no labeled repost count. Both reply threads were unavailable behind the login wall. No replies were sent.
+2026-10-21 attempted the preferred in-app Threads search first. No saved logged-in session was available, so the session is treated as logged out. Direct public post pages remain readable: [@a_ch_u 樂木集泡腳桶貼文](https://www.threads.com/@a_ch_u/post/DYCYV2Jki08) displayed 2026-05-07, 23 likes, 6 comments, and 3 reposts; the public page also exposed four visible reply/repost contexts, including the brand's June 10 reply and the author's follow-up. [@flower_weiwei 樂木集漢方茶貼文](https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0) displayed 2025-10-28, 8 likes, 2 comments, and no labeled repost count, but its replies stayed unavailable. No replies were sent.
 
-Public Threads-index fallback queries covered every priority and required term, plus the rotating broad terms below. The grouped Threads-only queries returned no verifiable net-new URLs; unrelated general-web pages were excluded. This does not establish that no matching posts exist. The retained set remains the existing 49 URL-deduplicated, filtered findings; all except the spot-checked source are historical references and must be reopened before using any reply draft.
+Public Threads-index fallback queries covered every priority and required term, plus the rotating broad terms below. The grouped Threads-only queries returned no verifiable net-new URLs; unrelated general-web pages were excluded. This does not establish that no matching posts exist. The retained set remains the existing 49 URL-deduplicated, filtered findings; all except the two spot-checked sources are historical references and must be reopened before using any reply draft.
 
 This public fallback pass checked all priority keywords and a rotating broad subset including:
 
@@ -64,7 +64,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 | Priority | Keyword | Source / account / date / context | Historical likes / comments / reposts | Sentiment | Suggested action | Brand editor draft | Small-account draft |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| High | 足浴 / 樂木集 | https://www.threads.com/@a_ch_u/post/DYCYV2Jki08 @a_ch_u · 2026-05-07 樂木集泡腳桶提及 提到樂木集泡腳桶、漢方湯浴包、新款出水口、下班泡腳與倒掛晾乾設計。 | 23 / 6 / 3 (2026-10-19 公開頁 spot-check) | 正向、細節具體、生活化 | 品牌小編可回覆，抓出水口和下班儀式感。 | 出水口跟能倒掛晾乾這種小細節，真的會在浴室差點變水災的瞬間突然變偉大。 | 倒掛晾乾跟好收納好重要，浴室東西真的最怕越放越多。 |
+| High | 足浴 / 樂木集 | https://www.threads.com/@a_ch_u/post/DYCYV2Jki08 @a_ch_u · 2026-05-07 樂木集泡腳桶提及 提到樂木集泡腳桶、漢方湯浴包、新款出水口、下班泡腳與倒掛晾乾設計；公開頁另見品牌與作者的倒掛晾乾往返回覆。 | 23 / 6 / 3 (2026-10-21 公開頁 spot-check) | 正向、細節具體、生活化 | 品牌已在可見留言串自然回覆；本輪不重複留言，留作品牌語氣參考。 | 出水口跟能倒掛晾乾這種小細節，真的會在浴室差點變水災的瞬間突然變偉大。 | 倒掛晾乾跟好收納好重要，浴室東西真的最怕越放越多。 |
 | High | 足浴 / 樂木集 | https://www.threads.com/@oyhuahua/post/DX_-wdAjzvE @oyhuahua · 2026-05-06 長工時泡腳體驗 使用者說坐整天腿腫，使用樂木集後被泡腳「ㄉㄧㄠˊ住」，也提到燕麥湯浴包與睡眠。 | 25 / 15 / 4 (未重驗) | 正向、共感強、互動佳 | 品牌小編可回覆；小帳可接工作疲勞和睡眠。 | 「本來覺得泡腳是老人行為」這句太真，很多快樂都是長大後才突然懂。下班後把腳交給熱水真的很可以。 | 坐一整天腿腫真的懂，泡完比較好睡這點好心動，感覺很適合配追劇。 |
 | High | 泡腳 / 樂木集 | https://www.threads.com/@debbyhair__/post/DYwPt0mE-Mz @debbyhair__ · 2026-05-25 品牌提及 使用者分享泡腳自由、邊打遊戲邊泡腳，並提醒水不要裝太滿。 | 16 / 10 / 4 (未重驗) | 正向、生活感、有笑點 | 品牌小編可回覆；小帳可輕鬆附和。 | 這個水裝太滿的畫面感太強了，泡腳自由第一課：先不要太相信自己的手感。 | 邊打遊戲邊泡腳聽起來也太爽，我也想試試但感覺水位真的要小心。 |
 | Medium | 泡腳 | https://www.threads.com/@bbkf5_milk/post/DYkFc9-k8qs @bbkf5_milk · 2026-05-20 美甲流程提問 使用者詢問足部美甲前是否會先泡腳。 | 待確認 / 待確認 / 待確認 (未重驗) | 好奇、實用 | 小帳可自然分享經驗；品牌只在能提供資訊時加入。 | 這題很生活欸，感覺可以先問店家，避免現場突然進入驚喜流程。 | 我遇過有先泡的，也遇過沒有，可能真的看店家。 |
@@ -109,14 +109,14 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 | Medium | 泡腳桶 / 樂木集 | https://www.threads.com/@lisaxhg/post/DYEGyeNk4XI @lisaxhg · 2026-05-08 樂木集泡腳桶與泡腳球 使用者買樂木集泡腳桶做 SPA，搭配寶可夢泡腳球，分享使用小插曲。 | 14 / 7 / 2 (未重驗) | 正向、輕鬆、可互動 | 適合品牌用輕鬆語氣回覆，不必帶產品賣點太重。 | 泡腳 SPA 加寶可夢泡腳球，這個儀式感很可愛。膜忘記撕也是每個人都可能經歷的使用者教育現場。 | 這種泡腳球小驚喜好可愛，泡腳突然變成開盲盒。 |
 | High | 足浴禮盒 / 樂木集 | https://www.threads.com/@pig_pig_eateat/post/DTxM-2-knOM @pig_pig_eateat · 2026-01-21 樂木集足浴禮盒開箱 使用者開箱樂木集足浴禮盒，提到冬天在客廳泡腳、足浴袋顏色可選、禮盒內有 21 包湯浴包。 | 11 / 1 / 3 (未重驗) | 開箱、禮盒、冬天情境 | 品牌可回覆客廳泡腳的日常感與禮盒儀式感。 | 冬天在客廳泡腳真的很懂，身體在放鬆，眼睛還可以繼續追劇，這種懶得剛剛好。 | 21 包湯浴包感覺很適合慢慢用，禮盒送人也不會太硬。 |
 | High | 足浴 / 上班族 / 樂木集 | https://www.threads.com/@grace.khy_/post/DYCaiNgCQcJ @grace.khy_ · 2026-05-07 上班族舒壓小物推薦 使用者求推薦上班族舒壓小物，分享經前雙腳水腫、下班用足浴袋邊追劇邊泡腳，搭配樂木集漢方湯包。 | 21 / 5 / 2 (未重驗) | 高相關、舒壓小物、可回覆 | 品牌可回覆上班累、經前腳腫與追劇泡腳情境，避免宣稱改善。 | 上班後最需要的舒壓小物，常常不是多厲害，是你累到不想動時還願意拿出來用。 | 邊追劇邊泡腳聽起來很可以，經前腳悶悶腫腫真的會很想泡熱水。 |
-| High | 漢方茶 / 樂木集 | https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0 @flower_weiwei · 2025-10-28 樂木集沒有中藥味的漢方茶 使用者分享樂木集漢方茶，提到無糖、無咖啡因、5 分鐘沖泡、極輕濕/助眠/亮妍，並說沒有中藥味。 | 8 / 2 / 未顯示 (2026-10-19 公開頁 spot-check) | 品牌提及、茶飲賣點完整 | 品牌可回覆「沒有中藥味」與願意多喝水的日常感，避開代謝/體質功效。 | 「沒有中藥味」真的是漢方茶能不能變日常的關鍵，願意一直喝，比一次喝很厲害更重要。 | 無糖無咖啡因很加分，晚上想喝熱的但不想被咖啡因追著跑。 |
+| High | 漢方茶 / 樂木集 | https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0 @flower_weiwei · 2025-10-28 樂木集沒有中藥味的漢方茶 使用者分享樂木集漢方茶，提到無糖、無咖啡因、5 分鐘沖泡、極輕濕/助眠/亮妍，並說沒有中藥味。 | 8 / 2 / 未顯示 (2026-10-21 公開頁 spot-check) | 品牌提及、茶飲賣點完整 | 品牌可回覆「沒有中藥味」與願意多喝水的日常感，避開代謝/體質功效。 | 「沒有中藥味」真的是漢方茶能不能變日常的關鍵，願意一直喝，比一次喝很厲害更重要。 | 無糖無咖啡因很加分，晚上想喝熱的但不想被咖啡因追著跑。 |
 | Medium | 漢方茶 / 無糖茶 | https://www.threads.com/@pyj0970544446/post/DZzDcQbk5qp @pyj0970544446 · 2026-06-22 飯後草本漢方茶飲 使用者分享飯後喝熱熱的草本漢方茶飲，提到現在多喝無糖茶飲。 | 3 / 待確認 / 待確認 (未重驗) | 歷史貼文、日常茶飲 | 可用小帳自然互動；品牌可觀察飯後熱茶與無糖需求。 | 飯後一杯熱茶這種習慣很安定，尤其無糖喝久了，反而會開始怕太甜。 | 飯後熱熱喝一杯很舒服，無糖茶真的會越喝越順。 |
 | Medium | 濕氣 / 泡腳 | https://www.threads.com/@sam__houng/post/DSKPA_ok6vb @sam__houng · 2025-12-12 濕氣重與泡熱水腳 貼文整理濕氣重常見訊號與排濕方式，其中提到睡前泡腳或泡澡。內容帶有健康建議，需謹慎。 | 23 / 3 / 2 (未重驗) | 健康建議、觀察為主 | 不建議品牌直接認同功效；可觀察泡腳在濕氣討論中的自然位置。 | 不建議品牌回覆功效。這篇適合觀察：大家會把泡腳放在「睡前照顧自己」的生活習慣裡。 | 泡腳至少是很容易開始的小習慣，不用一下子改完整個人生。 |
 | Medium | 刮痧 / 長期自我照顧 | https://www.threads.com/@ranieyang/post/DWjUsSYmBX1 @ranieyang · 2026-03-31 六年刮痧經驗分享 使用者分享長期刮痧心得，強調手法、油、方向、工具順手與穩定頻率。 | 1,135 / 38 / 115 (未重驗) | 高互動、工具教育、需避開誇大 | 品牌可觀察刮痧教育語言，若回覆可強調溫和、順手、持續。 | 「頻率贏過力道」這句很值得收，刮痧真的不是越狠越有效，願意溫柔持續比較難。 | 工具順手真的會影響會不會每天用，太麻煩就會直接放棄。 |
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-19, no saved logged-in session was available and the in-app Threads search displayed an Instagram login prompt rather than readable results. Public direct post pages exposed the post itself and labeled engagement, but comments/replies were hidden behind login; two retained public sources were spot-checked. Public Threads-index searches did not expose reliable net-new URLs for the required keyword set. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-21, no saved logged-in session was available. Public direct post pages exposed the post itself and labeled engagement; the `@a_ch_u` page exposed four reply/repost contexts, while the `@flower_weiwei` replies remained unavailable behind login. Public Threads-index searches did not expose reliable net-new URLs for the required keyword set. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
 
 ## Added Keyword Pass
 
