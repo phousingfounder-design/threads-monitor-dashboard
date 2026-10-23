@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-10-21 09:53 Asia/Taipei
+Last updated: 2026-10-23 11:04 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -25,7 +25,9 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 
 ## Current Run Summary
 
-2026-10-21 attempted the preferred in-app Threads search first. No saved logged-in session was available, so the session is treated as logged out. Direct public post pages remain readable: [@a_ch_u 樂木集泡腳桶貼文](https://www.threads.com/@a_ch_u/post/DYCYV2Jki08) displayed 2026-05-07, 23 likes, 6 comments, and 3 reposts; the public page also exposed four visible reply/repost contexts, including the brand's June 10 reply and the author's follow-up. [@flower_weiwei 樂木集漢方茶貼文](https://www.threads.com/@flower_weiwei/post/DQYKBFvkxY0) displayed 2025-10-28, 8 likes, 2 comments, and no labeled repost count, but its replies stayed unavailable. No replies were sent.
+2026-10-23 attempted the preferred in-app Threads search first. No saved logged-in session was available, and the public search page returned 「查無結果」 for `樂木集` while showing the Instagram login prompt. Public web-index fallback used four grouped Threads-only searches covering every priority keyword plus the required broad terms; it returned no verifiable Threads URLs. This is a discovery-coverage limitation, not evidence of no conversation.
+
+One direct public spot-check remained readable: [@a_ch_u 樂木集泡腳桶貼文](https://www.threads.com/@a_ch_u/post/DYCYV2Jki08) displayed 2026-05-07, 23 likes, 6 comments, and 3 reposts. Its visible reply/repost contexts included `@nnbao.18`, `@doratsai170`, the brand `@lomoji_loveherb`, and the author's follow-up; no reply was sent. The existing 49 URL-deduplicated findings remain retained. All other items, including the earlier `@flower_weiwei` public spot-check, are historical references and must be reopened before any reply is posted.
 
 Public Threads-index fallback queries covered every priority and required term, plus the rotating broad terms below. The grouped Threads-only queries returned no verifiable net-new URLs; unrelated general-web pages were excluded. This does not establish that no matching posts exist. The retained set remains the existing 49 URL-deduplicated, filtered findings; all except the two spot-checked sources are historical references and must be reopened before using any reply draft.
 
@@ -116,7 +118,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-21, no saved logged-in session was available. Public direct post pages exposed the post itself and labeled engagement; the `@a_ch_u` page exposed four reply/repost contexts, while the `@flower_weiwei` replies remained unavailable behind login. Public Threads-index searches did not expose reliable net-new URLs for the required keyword set. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-23, no saved logged-in session was available; public search showed an Instagram login prompt and no result for `樂木集`. Public direct post pages still exposed the post itself and labeled engagement; the `@a_ch_u` page exposed four reply/repost contexts, while broad public-index queries did not return reliable net-new URLs. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
 
 ## Added Keyword Pass
 
