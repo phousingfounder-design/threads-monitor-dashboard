@@ -1,6 +1,6 @@
 # Threads Monitoring Dashboard
 
-Last updated: 2026-10-27 16:56 Asia/Taipei
+Last updated: 2026-10-28 09:12 Asia/Taipei
 
 ## Monitoring Scope
 
@@ -24,6 +24,8 @@ The ongoing goal is to find Threads posts or comments that mention the tracked k
 - Mark coverage limitations when Threads hides comments or requires login.
 
 ## Current Run Summary
+
+2026-10-28 checked the preferred in-app browser first: no saved authenticated Threads session was available. A fresh public Threads search for `樂木集` exposed only the Instagram-login prompt, not searchable results. Four grouped public Threads-only web-index searches covered every priority keyword and the required broad set, including `LOMOJI`, `足浴`, `泡腳`, `足浴袋`, `泡腳桶`, `漢方湯浴包`, `燕麥浴鹽包`, `漢方茶`, `養生茶`, `濕氣`, `中藥`, `漢方`, `睡不著`, `失眠`, `刮痧`, `按摩油`, and `肩頸僵硬`; none returned a verifiable net-new Threads URL. Comments/replies were not visible behind the login wall. This is a discovery and reply-coverage limitation, not evidence of no conversation. The existing 49 URL-deduplicated, filtered findings remain retained; no reply was posted.
 
 2026-10-27 attempted the preferred in-app Threads search first. There was no previously saved in-app tab; the newly opened public search for `樂木集` showed an Instagram login prompt rather than searchable results. Public web-index fallback used four grouped Threads-only searches covering every priority keyword and the specified broad subset; it returned no verifiable Threads URLs. This is a discovery-coverage limitation, not evidence of no conversation.
 
@@ -118,7 +120,7 @@ The monitor now uses `product_knowledge.md` to make replies more specific. Usefu
 
 ## Coverage Notes
 
-Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-27, no saved in-app tab/session was available; public search showed an Instagram login prompt instead of results for `樂木集`. Public direct post pages still exposed the post text and labeled engagement for `@a_ch_u` and `@flower_weiwei`, but replies stayed loading behind the login wall. Broad public-index queries did not return reliable net-new URLs. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
+Threads search does not reliably expose all keyword mentions, especially deep comment/reply threads. On 2026-10-28, no saved authenticated in-app session was available; public search for `樂木集` showed only an Instagram login prompt, while all four grouped Threads-only index searches returned no verifiable net-new URLs. Visible comments/replies could not be captured. The 2026-10-27 public spot-check metrics for `@a_ch_u` and `@flower_weiwei` are retained as historical verification, not refreshed values. For fuller coverage, the monitor needs a working logged-in session, an approved listening tool, or a manual export from a social listening platform.
 
 ## Added Keyword Pass
 
